@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Code">
+      <UniqueIdentifier>{96b310a6-4ee9-48d6-97a9-3ce4099a2f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter">
+      <UniqueIdentifier>{fa6ddea4-9db8-4d97-9231-ea0260062fe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter\data">
+      <UniqueIdentifier>{16acd2c5-fbf3-4bdd-b0d5-f6faede788e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter\network">
+      <UniqueIdentifier>{9b29b94c-73a2-4943-8455-989db7185747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter\network\messages">
+      <UniqueIdentifier>{f8fc0e46-81e1-4b0c-a283-c8f80a772479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter\data\io">
+      <UniqueIdentifier>{de72d1c7-60c7-4d22-b01e-8889d5fea39b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter\network\io">
+      <UniqueIdentifier>{e8784a96-c337-4ae5-b6b4-f143b149cc6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Code\transporter\data</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkStream.cpp">
+      <Filter>Code\transporter\network\io</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryStream.cpp">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Transporter.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="ssize_t.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>Code\transporter\data</Filter>
+    </ClInclude>
+    <ClInclude Include="IBytesOutput.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IBytesInput.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IDataInput.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IDataOutput.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkStream.h">
+      <Filter>Code\transporter\network\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IBytesStream.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryStream.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
