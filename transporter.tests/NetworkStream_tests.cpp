@@ -103,14 +103,10 @@ TEST_CASE("READs/WRITEs")
 	REQUIRE(ns.readString() == std::string("Hello, World!"));
 }
 
-TEST_CASE("Transactions")
+TEST_CASE("Read Transactions")
 {
 	transporter::data::io::MemoryStream ms{};
 	transporter::network::io::NetworkStream ns{ ms };
-	const char *bufferStr = "Hello, Buffer!";
-	std::size_t bufferStrLen = std::strlen(bufferStr);
-	transporter::data::Buffer buffer{ bufferStr, bufferStrLen };
-	std::unique_ptr<transporter::data::Buffer> readBuffer{};
 
 	SECTION("Successful transaction")
 	{
@@ -143,5 +139,41 @@ TEST_CASE("Transactions")
 		REQUIRE(ns.commitReadTransaction() == false);
 		REQUIRE(ns.startReadTransaction() == true);
 		REQUIRE(ns.startReadTransaction() == false);
+	}
+}
+
+TEST_CASE("Write Transactions")
+{
+	transporter::data::io::MemoryStream ms{};
+	transporter::network::io::NetworkStream ns{ ms };
+
+	SECTION("Successful Transaction")
+	{
+		REQUIRE(ns.startWriteTransaction() == true);
+		
+		ns.writeInt8(32);
+		REQUIRE(ms.getLength() == 0);
+
+		REQUIRE(ns.commitWriteTransaction() == true);
+		REQUIRE(ms.getLength() == 1);
+		ms.setPosition(0);
+		REQUIRE(ns.readInt32() == 32);
+	}
+
+	SECTION("Rollback Transaction")
+	{
+		ns.startWriteTransaction();
+		ns.writeInt8(32);
+
+		REQUIRE(ns.rollbackWriteTransaction() == true);
+		REQUIRE(ms.getLength() == 0);
+	}
+
+	SECTION("Tricky cases/errors")
+	{
+		REQUIRE(ns.rollbackWriteTransaction() == false);
+		REQUIRE(ns.commitWriteTransaction() == false);
+		REQUIRE(ns.startWriteTransaction() == true);
+		REQUIRE(ns.startWriteTransaction() == false);
 	}
 }

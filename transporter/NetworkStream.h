@@ -24,6 +24,10 @@ namespace transporter
 				bool commitReadTransaction() noexcept;
 				bool rollbackReadTransaction() noexcept;
 
+				bool startWriteTransaction() noexcept;
+				bool commitWriteTransaction() noexcept;
+				bool rollbackWriteTransaction() noexcept;
+
 				virtual std::unique_ptr<transporter::data::Buffer> readBytes(std::size_t count) noexcept override;
 				virtual ssize_t writeBytes(const transporter::data::Buffer &buffer) noexcept override;
 
@@ -164,9 +168,12 @@ namespace transporter
 
 				data::io::IBytesStream &m_stream;
 				data::Buffer m_readBuffer;
-				data::Buffer m_transactionBackupReadBuffer;
-				bool m_transaction;
-				bool m_transactionReadPastEnd;
+				data::Buffer m_readTransactionBackupBuffer;
+				data::Buffer m_writeTransctionBuffer;
+				bool m_readTransaction;
+				bool m_readTransactionError;
+				bool m_writeTransaction;
+				bool m_writeTransactionError;
 			};
 		}
 	}

@@ -3,49 +3,101 @@
 transporter::network::io::NetworkStream::NetworkStream(data::io::IBytesStream &stream) noexcept : IDataInput{}, IDataOutput{},
 m_stream{ stream },
 m_readBuffer{},
-m_transactionBackupReadBuffer{},
-m_transaction{ false },
-m_transactionReadPastEnd{ false }
+m_readTransactionBackupBuffer{},
+m_writeTransctionBuffer{},
+m_readTransaction{ false },
+m_readTransactionError{ false },
+m_writeTransaction{ false },
+m_writeTransactionError{ false }
 {
 }
 
 
 bool transporter::network::io::NetworkStream::startReadTransaction() noexcept
 {
-	if (m_transaction)
+	if (m_readTransaction)
 	{
 		return false;
 	}
 
-	m_transaction = true;
+	m_readTransaction = true;
 	
 	return true;
 }
 
 bool transporter::network::io::NetworkStream::commitReadTransaction() noexcept
 {
-	if (!m_transaction || m_transactionReadPastEnd)
+	if (!m_readTransaction || m_readTransactionError)
 	{
 		return false;
 	}
 
-	m_transactionBackupReadBuffer = data::Buffer{};
-	m_transaction = false;
+	m_readTransactionBackupBuffer = data::Buffer{};
+	m_readTransaction = false;
 
 	return true;
 }
 
 bool transporter::network::io::NetworkStream::rollbackReadTransaction() noexcept
 {
-	if (!m_transaction)
+	if (!m_readTransaction)
 	{
 		return false;
 	}
 
-	m_readBuffer = m_transactionBackupReadBuffer + m_readBuffer;
-	m_transactionBackupReadBuffer = data::Buffer{};
-	m_transaction = false;
-	m_transactionReadPastEnd = false;
+	m_readBuffer = m_readTransactionBackupBuffer + m_readBuffer;
+	m_readTransactionBackupBuffer = data::Buffer{};
+	m_readTransaction = false;
+	m_readTransactionError = false;
+
+	return true;
+}
+
+
+bool transporter::network::io::NetworkStream::startWriteTransaction() noexcept
+{
+	if (m_writeTransaction)
+	{
+		return false;
+	}
+
+	m_writeTransaction = true;
+
+	return true;
+}
+
+bool transporter::network::io::NetworkStream::commitWriteTransaction() noexcept
+{
+	if (!m_writeTransaction || m_writeTransactionError)
+	{
+		return false;
+	}
+
+
+	if (m_stream.writeBytes(m_writeTransctionBuffer) == m_writeTransctionBuffer.getSize())
+	{
+		m_writeTransctionBuffer = data::Buffer{};
+		m_writeTransaction = false;
+
+		return true;
+	}
+
+	else
+	{
+		return false;
+	}
+}
+
+bool transporter::network::io::NetworkStream::rollbackWriteTransaction() noexcept
+{
+	if (!m_writeTransaction)
+	{
+		return false;
+	}
+
+	m_writeTransctionBuffer = data::Buffer{};
+	m_writeTransaction = false;
+	m_writeTransactionError = false;
 
 	return true;
 }
@@ -70,9 +122,9 @@ std::unique_ptr<transporter::data::Buffer> transporter::network::io::NetworkStre
 			{
 				if (m_readBuffer.getSize() == 0)
 				{
-					if (m_transaction)
+					if (m_readTransaction)
 					{
-						m_transactionReadPastEnd = true;
+						m_readTransactionError = true;
 					}
 
 					return nullptr;
@@ -82,18 +134,18 @@ std::unique_ptr<transporter::data::Buffer> transporter::network::io::NetworkStre
 
 		else if (m_readBuffer.getSize() == 0)
 		{
-			if (m_transaction)
+			if (m_readTransaction)
 			{
-				m_transactionReadPastEnd = true;
+				m_readTransactionError = true;
 			}
 
 			return nullptr;
 		}
 	}
 
-	if (m_transaction && count > m_readBuffer.getSize())
+	if (m_readTransaction && count > m_readBuffer.getSize())
 	{
-		m_transactionReadPastEnd = true;
+		m_readTransactionError = true;
 	}
 
 	count = count <= m_readBuffer.getSize() ? count : m_readBuffer.getSize();
@@ -102,9 +154,9 @@ std::unique_ptr<transporter::data::Buffer> transporter::network::io::NetworkStre
 	{
 		buffer = m_readBuffer.slice(0, count);
 
-		if (m_transaction)
+		if (m_readTransaction)
 		{
-			m_transactionBackupReadBuffer += *buffer;
+			m_readTransactionBackupBuffer += *buffer;
 		}
 
 		return buffer;
@@ -118,7 +170,26 @@ std::unique_ptr<transporter::data::Buffer> transporter::network::io::NetworkStre
 
 ssize_t transporter::network::io::NetworkStream::writeBytes(const transporter::data::Buffer &buffer) noexcept
 {
-	return m_stream.writeBytes(buffer);
+	if (m_writeTransaction)
+	{
+		try
+		{
+			m_writeTransctionBuffer += buffer;
+			
+			return buffer.getSize();
+		}
+
+		catch (...)
+		{
+			m_writeTransactionError = true;
+			return -1;
+		}
+	}
+
+	else
+	{
+		return m_stream.writeBytes(buffer);
+	}
 }
 
 
