@@ -150,9 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
-    <ClInclude Include="IBytesOutput.h" />
-    <ClInclude Include="IBytesInput.h" />
-    <ClInclude Include="IBytesStream.h" />
+    <ClInclude Include="IByteOutput.h" />
+    <ClInclude Include="IByteInput.h" />
+    <ClInclude Include="IByteStream.h" />
     <ClInclude Include="IDataInput.h" />
     <ClInclude Include="IDataOutput.h" />
     <ClInclude Include="MemoryStream.h" />

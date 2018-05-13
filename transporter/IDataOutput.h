@@ -7,7 +7,7 @@
 #include <string>
 
 #include "Buffer.h"
-#include "IBytesOutput.h"
+#include "IByteOutput.h"
 #include "ssize_t.h"
 
 namespace transporter
@@ -16,7 +16,7 @@ namespace transporter
 	{
 		namespace io
 		{
-			class TRANSPORTER_DLL IDataOutput : public transporter::data::io::IBytesOutput
+			class TRANSPORTER_DLL IDataOutput : public transporter::data::io::IByteOutput
 			{
 			public:
 				IDataOutput() noexcept = default;

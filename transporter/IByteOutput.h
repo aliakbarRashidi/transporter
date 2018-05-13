@@ -11,11 +11,11 @@ namespace transporter
 	{
 		namespace io
 		{
-			class TRANSPORTER_DLL IBytesOutput
+			class TRANSPORTER_DLL IByteOutput
 			{
 			public:
-				IBytesOutput() noexcept = default;
-				virtual ~IBytesOutput() noexcept = default;
+				IByteOutput() noexcept = default;
+				virtual ~IByteOutput() noexcept = default;
 
 				virtual ssize_t writeBytes(const transporter::data::Buffer &buffer) noexcept = 0;
 			};

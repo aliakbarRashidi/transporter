@@ -50,12 +50,6 @@
     <ClInclude Include="Buffer.h">
       <Filter>Code\transporter\data</Filter>
     </ClInclude>
-    <ClInclude Include="IBytesOutput.h">
-      <Filter>Code\transporter\data\io</Filter>
-    </ClInclude>
-    <ClInclude Include="IBytesInput.h">
-      <Filter>Code\transporter\data\io</Filter>
-    </ClInclude>
     <ClInclude Include="IDataInput.h">
       <Filter>Code\transporter\data\io</Filter>
     </ClInclude>
@@ -65,9 +59,6 @@
     <ClInclude Include="NetworkStream.h">
       <Filter>Code\transporter\network\io</Filter>
     </ClInclude>
-    <ClInclude Include="IBytesStream.h">
-      <Filter>Code\transporter\data\io</Filter>
-    </ClInclude>
     <ClInclude Include="MemoryStream.h">
       <Filter>Code\transporter\data\io</Filter>
     </ClInclude>
@@ -76,6 +67,15 @@
     </ClInclude>
     <ClInclude Include="TransactionException.h">
       <Filter>Code\transporter\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="IByteInput.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IByteOutput.h">
+      <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IByteStream.h">
+      <Filter>Code\transporter\data\io</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

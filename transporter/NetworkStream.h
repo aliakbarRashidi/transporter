@@ -6,7 +6,7 @@
 
 #include "Transporter.h"
 
-#include "IBytesStream.h"
+#include "IByteStream.h"
 #include "IDataInput.h"
 #include "IDataOutput.h"
 #include "INetworkMessage.h"
@@ -23,7 +23,7 @@ namespace transporter
 			class TRANSPORTER_DLL NetworkStream : public transporter::data::io::IDataInput, public transporter::data::io::IDataOutput
 			{
 			public:
-				NetworkStream(transporter::data::io::IBytesStream &stream) noexcept;
+				NetworkStream(transporter::data::io::IByteStream &stream) noexcept;
 				~NetworkStream() noexcept = default;
 
 				void sendMessage(const transporter::network::messages::INetworkMessage &message) throw(std::bad_alloc, std::overflow_error, transporter::exceptions::TransactionException);
@@ -175,7 +175,7 @@ namespace transporter
 				static const int INT_CHUNK_FLAG_MASK = 0b10000000;
 
 
-				data::io::IBytesStream &m_stream;
+				data::io::IByteStream &m_stream;
 				data::Buffer m_readBuffer;
 				data::Buffer m_readTransactionBackupBuffer;
 				data::Buffer m_writeTransctionBuffer;

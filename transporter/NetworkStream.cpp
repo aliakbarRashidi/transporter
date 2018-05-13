@@ -2,7 +2,7 @@
 
 #include <limits>
 
-transporter::network::io::NetworkStream::NetworkStream(data::io::IBytesStream &stream) noexcept : IDataInput{}, IDataOutput{},
+transporter::network::io::NetworkStream::NetworkStream(data::io::IByteStream &stream) noexcept : IDataInput{}, IDataOutput{},
 m_stream{ stream },
 m_readBuffer{},
 m_readTransactionBackupBuffer{},

@@ -3,7 +3,7 @@
 #include "Transporter.h"
 
 #include "Buffer.h"
-#include "IBytesStream.h"
+#include "IByteStream.h"
 
 namespace transporter
 {
@@ -11,7 +11,7 @@ namespace transporter
 	{
 		namespace io
 		{
-			class TRANSPORTER_DLL MemoryStream : public transporter::data::io::IBytesStream
+			class TRANSPORTER_DLL MemoryStream : public transporter::data::io::IByteStream
 			{
 			public:
 				MemoryStream() noexcept;

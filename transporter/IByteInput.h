@@ -15,11 +15,11 @@ namespace transporter
 	{
 		namespace io
 		{
-			class TRANSPORTER_DLL IBytesInput
+			class TRANSPORTER_DLL IByteInput
 			{
 			public:
-				IBytesInput() noexcept = default;
-				virtual ~IBytesInput() noexcept = default;
+				IByteInput() noexcept = default;
+				virtual ~IByteInput() noexcept = default;
 
 				virtual std::unique_ptr<transporter::data::Buffer> readBytes(std::size_t count) noexcept = 0;
 			};
