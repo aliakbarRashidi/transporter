@@ -150,9 +150,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MemoryStream_tests.cpp" />
     <ClCompile Include="NetworkStream_tests.cpp" />
+    <ClCompile Include="TestMessage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer_tests.h" />
+    <ClInclude Include="TestMessage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

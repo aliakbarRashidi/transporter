@@ -146,6 +146,7 @@
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="MemoryStream.cpp" />
     <ClCompile Include="NetworkStream.cpp" />
+    <ClCompile Include="TransactionException.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
@@ -155,8 +156,10 @@
     <ClInclude Include="IDataInput.h" />
     <ClInclude Include="IDataOutput.h" />
     <ClInclude Include="MemoryStream.h" />
+    <ClInclude Include="INetworkMessage.h" />
     <ClInclude Include="NetworkStream.h" />
     <ClInclude Include="ssize_t.h" />
+    <ClInclude Include="TransactionException.h" />
     <ClInclude Include="Transporter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

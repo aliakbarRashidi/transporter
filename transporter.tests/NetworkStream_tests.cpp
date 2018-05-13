@@ -7,6 +7,19 @@
 #include "transporter/MemoryStream.h"
 #include "transporter/NetworkStream.h"
 
+#include "TestMessage.h"
+
+transporter::network::messages::NetworkMessagePtr networkMessageTestSelector(transporter::network::messages::NetworkMessageId id)
+{
+	switch (id)
+	{
+	case TestMessage::MESSAGE_ID:
+		return std::make_unique<TestMessage>();
+	default:
+		return nullptr;
+	}
+}
+
 TEST_CASE("READs/WRITEs")
 {
 	transporter::data::io::MemoryStream ms{};
@@ -175,5 +188,29 @@ TEST_CASE("Write Transactions")
 		REQUIRE(ns.commitWriteTransaction() == false);
 		REQUIRE(ns.startWriteTransaction() == true);
 		REQUIRE(ns.startWriteTransaction() == false);
+	}
+}
+
+TEST_CASE("Network Messages")
+{
+	SECTION("Sending/Receiving")
+	{
+		transporter::data::io::MemoryStream ms{};
+		transporter::network::io::NetworkStream ns{ ms };
+		TestMessage sendTestMsg{};
+		transporter::network::messages::NetworkMessagePtr recvMsg{};
+		TestMessage *recvTestMsg{ };
+
+		sendTestMsg.m_str1 = "Hello, World!";
+		sendTestMsg.m_i1 = 2018;
+
+		ns.sendMessage(sendTestMsg);
+		ms.setPosition(0);
+
+		recvMsg = ns.receiveMessage(transporter::network::io::NetworkMessageSelector{ &networkMessageTestSelector });
+		recvTestMsg = dynamic_cast<TestMessage*>(recvMsg.get());
+
+		REQUIRE(recvTestMsg->m_str1 == sendTestMsg.m_str1);
+		REQUIRE(recvTestMsg->m_i1 == sendTestMsg.m_i1);
 	}
 }

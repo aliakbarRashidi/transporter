@@ -22,6 +22,9 @@
     <Filter Include="Code\transporter\network\io">
       <UniqueIdentifier>{e8784a96-c337-4ae5-b6b4-f143b149cc6a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\transporter\exceptions">
+      <UniqueIdentifier>{0540c886-181b-49f5-8e13-2d04b294e5b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
@@ -32,6 +35,9 @@
     </ClCompile>
     <ClCompile Include="MemoryStream.cpp">
       <Filter>Code\transporter\data\io</Filter>
+    </ClCompile>
+    <ClCompile Include="TransactionException.cpp">
+      <Filter>Code\transporter\exceptions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +70,12 @@
     </ClInclude>
     <ClInclude Include="MemoryStream.h">
       <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="INetworkMessage.h">
+      <Filter>Code\transporter\network\messages</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionException.h">
+      <Filter>Code\transporter\exceptions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

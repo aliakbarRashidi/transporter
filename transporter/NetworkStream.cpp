@@ -1,5 +1,7 @@
 #include "NetworkStream.h"
 
+#include <limits>
+
 transporter::network::io::NetworkStream::NetworkStream(data::io::IBytesStream &stream) noexcept : IDataInput{}, IDataOutput{},
 m_stream{ stream },
 m_readBuffer{},
@@ -10,6 +12,60 @@ m_readTransactionError{ false },
 m_writeTransaction{ false },
 m_writeTransactionError{ false }
 {
+}
+
+
+void transporter::network::io::NetworkStream::sendMessage(const transporter::network::messages::INetworkMessage &message) throw(std::bad_alloc, std::overflow_error, transporter::exceptions::TransactionException)
+{
+	if (this->startWriteTransaction())
+	{
+		transporter::data::Buffer msgData{};
+
+		message.serialize(*this);
+
+		msgData = m_writeTransctionBuffer;
+		m_writeTransctionBuffer = data::Buffer{};
+
+		this->writeInt32(message.getMessageId());
+		this->writeUInt32(msgData.getSize());
+		m_writeTransctionBuffer += msgData;
+
+		if (!this->commitWriteTransaction())
+		{
+			this->rollbackWriteTransaction();
+
+			throw transporter::exceptions::TransactionException{ "Unable to commit transaction" };
+		}
+	}
+	
+	else
+	{
+		throw transporter::exceptions::TransactionException{ "Can't start write transaction: already started" };
+	}
+}
+
+transporter::network::messages::NetworkMessagePtr transporter::network::io::NetworkStream::receiveMessage(const transporter::network::io::NetworkMessageSelector &selector) noexcept
+{
+	if (this->startReadTransaction())
+	{
+		transporter::network::messages::NetworkMessageId msgId = this->readInt32();
+		std::uint32_t msgDataSize = this->readUInt32();
+		std::unique_ptr<transporter::network::messages::INetworkMessage> msg = selector(msgId);
+
+		msg->deserialize(*this);
+
+		if (this->commitReadTransaction())
+		{
+			return msg;
+		}
+
+		return nullptr;
+	}
+
+	else
+	{
+		throw transporter::exceptions::TransactionException{ "Can't start read transaction: already started" };
+	}
 }
 
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+#include <memory>
 #include <type_traits>
 
 #include "Transporter.h"
@@ -7,6 +9,8 @@
 #include "IBytesStream.h"
 #include "IDataInput.h"
 #include "IDataOutput.h"
+#include "INetworkMessage.h"
+#include "TransactionException.h"
 
 namespace transporter
 {
@@ -14,11 +18,16 @@ namespace transporter
 	{
 		namespace io
 		{
+			typedef std::function<transporter::network::messages::NetworkMessagePtr(transporter::network::messages::NetworkMessageId)> NetworkMessageSelector;
+
 			class TRANSPORTER_DLL NetworkStream : public transporter::data::io::IDataInput, public transporter::data::io::IDataOutput
 			{
 			public:
 				NetworkStream(transporter::data::io::IBytesStream &stream) noexcept;
 				~NetworkStream() noexcept = default;
+
+				void sendMessage(const transporter::network::messages::INetworkMessage &message) throw(std::bad_alloc, std::overflow_error, transporter::exceptions::TransactionException);
+				transporter::network::messages::NetworkMessagePtr receiveMessage(const transporter::network::io::NetworkMessageSelector &selector) noexcept;
 
 				bool startReadTransaction() noexcept;
 				bool commitReadTransaction() noexcept;
