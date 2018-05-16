@@ -39,6 +39,9 @@
     <ClCompile Include="TransactionException.cpp">
       <Filter>Code\transporter\exceptions</Filter>
     </ClCompile>
+    <ClCompile Include="UnknownMessage.cpp">
+      <Filter>Code\transporter\network\messages</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Transporter.h">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="IByteStream.h">
       <Filter>Code\transporter\data\io</Filter>
+    </ClInclude>
+    <ClInclude Include="UnknownMessage.h">
+      <Filter>Code\transporter\network\messages</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

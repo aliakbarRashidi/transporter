@@ -2,6 +2,8 @@
 
 #include <limits>
 
+#include "UnknownMessage.h"
+
 transporter::network::io::NetworkStream::NetworkStream(data::io::IByteStream &stream) noexcept : IDataInput{}, IDataOutput{},
 m_stream{ stream },
 m_readBuffer{},
@@ -51,6 +53,11 @@ transporter::network::messages::NetworkMessagePtr transporter::network::io::Netw
 		transporter::network::messages::NetworkMessageId msgId = this->readInt32();
 		std::uint32_t msgDataSize = this->readUInt32();
 		std::unique_ptr<transporter::network::messages::INetworkMessage> msg = selector(msgId);
+
+		if (msg == nullptr)
+		{
+			msg = std::make_unique<transporter::network::messages::UnknownMessage>(msgId, msgDataSize);
+		}
 
 		msg->deserialize(*this);
 

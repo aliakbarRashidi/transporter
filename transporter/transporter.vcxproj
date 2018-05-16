@@ -147,6 +147,7 @@
     <ClCompile Include="MemoryStream.cpp" />
     <ClCompile Include="NetworkStream.cpp" />
     <ClCompile Include="TransactionException.cpp" />
+    <ClCompile Include="UnknownMessage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="ssize_t.h" />
     <ClInclude Include="TransactionException.h" />
     <ClInclude Include="Transporter.h" />
+    <ClInclude Include="UnknownMessage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

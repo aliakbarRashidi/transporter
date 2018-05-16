@@ -48,9 +48,9 @@ namespace transporter
 				*
 				* @details Use \p selector to instanciate the right type of network message and deserialize it using the underlying stream
 				*
-				* @param selector Network message selector used to instanciate the right type of network message.
+				* @param selector Network message selector used to instanciate the right type of network message. Must return \c nullptr if not matching ID was found
 				*
-				* @return Pointer to the newly-constructed, received network message. \c nullptr if no message was available
+				* @return Pointer to the newly-constructed, received network message. Return \c nullptr if no message was available or a transporter::network::messages::UnknownMessage if data was available but \p selector returned \c nullptr
 				*/
 				transporter::network::messages::NetworkMessagePtr receiveMessage(const transporter::network::io::NetworkMessageSelector &selector) noexcept;
 
