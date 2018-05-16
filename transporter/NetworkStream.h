@@ -20,22 +20,84 @@ namespace transporter
 		{
 			typedef std::function<transporter::network::messages::NetworkMessagePtr(transporter::network::messages::NetworkMessageId)> NetworkMessageSelector;
 
+			/**
+			* @brief Stream handling network messages (transporter::network::messages::INetworkMessage)
+			*
+			* @details Despite its name, this class can be used with any stream (transporter::data::io::IByteStream)
+			*/
 			class TRANSPORTER_DLL NetworkStream : public transporter::data::io::IDataInput, public transporter::data::io::IDataOutput
 			{
 			public:
+				/**
+				* @brief Initialize a network stream 
+				*
+				* @param stream Underlying stream this network stream will read from and write to
+				*/
 				NetworkStream(transporter::data::io::IByteStream &stream) noexcept;
+
 				~NetworkStream() noexcept = default;
 
+
+				/**
+				* @brief Send \p message to the underlying stream
+				*/
 				void sendMessage(const transporter::network::messages::INetworkMessage &message) throw(std::bad_alloc, std::overflow_error, transporter::exceptions::TransactionException);
+				
+				/**
+				* @brief Try to receive a network message
+				*
+				* @details Use \p selector to instanciate the right type of network message and deserialize it using the underlying stream
+				*
+				* @param selector Network message selector used to instanciate the right type of network message.
+				*
+				* @return Pointer to the newly-constructed, received network message. \c nullptr if no message was available
+				*/
 				transporter::network::messages::NetworkMessagePtr receiveMessage(const transporter::network::io::NetworkMessageSelector &selector) noexcept;
 
+
+				/**
+				* @brief Start a read transaction
+				*
+				* @return True if read transaction could be started, false otherwise
+				*/
 				bool startReadTransaction() noexcept;
+
+				/**
+				* @brief Commit a read transaction
+				*
+				* @return True if read transaction could be committed, false otherwise
+				*/
 				bool commitReadTransaction() noexcept;
+
+				/**
+				* @brief Rollback a read transaction
+				*
+				* @return True if read transaction could be rollbacked, false otherwise
+				*/
 				bool rollbackReadTransaction() noexcept;
 
+
+				/**
+				* @brief Start a write transaction
+				*
+				* @return True if write transaction could be started, false otherwise
+				*/
 				bool startWriteTransaction() noexcept;
+
+				/**
+				* @brief Commit a write transaction
+				*
+				* @return True if write transaction could be committed, false otherwise
+				*/
 				bool commitWriteTransaction() noexcept;
+
+				/**
+				* @brief Rollback a write transaction
+				*
+				* @return True if write transaction could be rollbacked, false otherwise
+				*/
 				bool rollbackWriteTransaction() noexcept;
+
 
 				virtual std::unique_ptr<transporter::data::Buffer> readBytes(std::size_t count) noexcept override;
 				virtual ssize_t writeBytes(const transporter::data::Buffer &buffer) noexcept override;
@@ -63,49 +125,6 @@ namespace transporter
 				virtual void writeFloat(float value) noexcept override;
 				virtual void writeDouble(double value) noexcept override;
 				virtual void writeString(const std::string &value) noexcept override;
-
-				template<typename T>
-				T readData() noexcept
-				{
-					std::size_t dataSize = sizeof(T);
-					std::unique_ptr<data::Buffer> buffer = this->readBytes(dataSize);
-					T data{};
-
-					if (buffer && buffer->getSize() == dataSize)
-					{
-						if (dataSize > 1 && !isBigEndian())
-						{
-							buffer->reverse();
-						}
-						
-						data = *reinterpret_cast<const T*>(buffer->getRawBuffer());
-					}
-
-					return data;
-				}
-
-				template<typename T>
-				void writeData(const T &value) noexcept
-				{
-					std::size_t dataSize = sizeof(T);
-
-					try
-					{
-						data::Buffer buffer{ reinterpret_cast<const char*>(&value), dataSize };
-
-						if (dataSize > 1 && !isBigEndian())
-						{
-							buffer.reverse();
-						}
-
-						this->writeBytes(buffer);
-					}
-
-					catch (...)
-					{
-						// TODO: what to do in case of failure?
-					}
-				}
 
 
 			private:
@@ -168,6 +187,50 @@ namespace transporter
 				}
 
 				static constexpr bool isBigEndian() noexcept;
+
+				template<typename T>
+				T readData() noexcept
+				{
+					std::size_t dataSize = sizeof(T);
+					std::unique_ptr<data::Buffer> buffer = this->readBytes(dataSize);
+					T data{};
+
+					if (buffer && buffer->getSize() == dataSize)
+					{
+						if (dataSize > 1 && !isBigEndian())
+						{
+							buffer->reverse();
+						}
+
+						data = *reinterpret_cast<const T*>(buffer->getRawBuffer());
+					}
+
+					return data;
+				}
+
+				template<typename T>
+				void writeData(const T &value) noexcept
+				{
+					std::size_t dataSize = sizeof(T);
+
+					try
+					{
+						data::Buffer buffer{ reinterpret_cast<const char*>(&value), dataSize };
+
+						if (dataSize > 1 && !isBigEndian())
+						{
+							buffer.reverse();
+						}
+
+						this->writeBytes(buffer);
+					}
+
+					catch (...)
+					{
+						// TODO: what to do in case of failure?
+					}
+				}
+
 
 				static const std::size_t READ_BLOCK_SIZE = 2048;
 				static const int INT_CHUNK_BITS = 7;
