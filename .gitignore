@@ -288,5 +288,9 @@ __pycache__/
 *.xsd.cs
 
 # Doxygen
-
 doc/**
+
+# CMake
+CMakeFiles/**
+CMakeCache.txt
+build/**
