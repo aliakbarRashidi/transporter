@@ -104,11 +104,18 @@ namespace transporter
 
 
 			/**
+			* @brief Get the raw pointer to the (constant) internal buffer
+			*
+			* @return Raw pointer to (constant) internal buffer
+			*/
+			const char *getRawBuffer() const noexcept;
+
+			/**
 			* @brief Get the raw pointer to the internal buffer
 			*
 			* @return Raw pointer to internal buffer
 			*/
-			const char *getRawBuffer() const noexcept;
+			char *getRawBuffer() noexcept;
 
 			/**
 			* @brief Get the size of this buffer
@@ -172,5 +179,7 @@ namespace transporter
 			std::unique_ptr<char[]> m_buffer;
 			std::size_t m_bufferSize;
 		};
+
+		typedef std::unique_ptr<transporter::data::Buffer> BufferPtr;
 	}
 }

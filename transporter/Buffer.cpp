@@ -118,6 +118,11 @@ const char *transporter::data::Buffer::getRawBuffer() const noexcept
 	return m_buffer.get();
 }
 
+char *transporter::data::Buffer::getRawBuffer() noexcept
+{
+	return m_buffer.get();
+}
+
 std::size_t transporter::data::Buffer::getSize() const noexcept
 {
 	return m_bufferSize;

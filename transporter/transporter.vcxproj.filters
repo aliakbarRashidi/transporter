@@ -25,6 +25,9 @@
     <Filter Include="Code\transporter\exceptions">
       <UniqueIdentifier>{0540c886-181b-49f5-8e13-2d04b294e5b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\transporter\interfaces">
+      <UniqueIdentifier>{ee84650a-70d7-4f2e-b060-1fc5dc7fa7f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="UnknownMessage.cpp">
       <Filter>Code\transporter\network\messages</Filter>
+    </ClCompile>
+    <ClCompile Include="TransporterInterfaceQt.cpp">
+      <Filter>Code\transporter\interfaces</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="UnknownMessage.h">
       <Filter>Code\transporter\network\messages</Filter>
+    </ClInclude>
+    <ClInclude Include="TransporterInterfaceQt.h">
+      <Filter>Code\transporter\interfaces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

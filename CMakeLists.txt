@@ -4,6 +4,6 @@ project(transporter)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(TRANSPORTER_SOURCES_DIR transporter)
+set(TRANSPORTER_SRC_DIR transporter)
 
-add_subdirectory(${TRANSPORTER_SOURCES_DIR})
+add_subdirectory(${TRANSPORTER_SRC_DIR})
