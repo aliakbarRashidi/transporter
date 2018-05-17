@@ -28,6 +28,12 @@
     <Filter Include="Code\transporter\interfaces">
       <UniqueIdentifier>{ee84650a-70d7-4f2e-b060-1fc5dc7fa7f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\transporter\interfaces\qt">
+      <UniqueIdentifier>{89512ab5-7975-43d0-9be5-78c23f3fc045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter\interfaces\sfml">
+      <UniqueIdentifier>{f59230d3-d0e7-4c26-8a2f-049645b0025c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
@@ -45,8 +51,8 @@
     <ClCompile Include="UnknownMessage.cpp">
       <Filter>Code\transporter\network\messages</Filter>
     </ClCompile>
-    <ClCompile Include="TransporterInterfaceQt.cpp">
-      <Filter>Code\transporter\interfaces</Filter>
+    <ClCompile Include="TransporterInterfaceQtQIODevice.cpp">
+      <Filter>Code\transporter\interfaces\qt</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,8 +95,8 @@
     <ClInclude Include="UnknownMessage.h">
       <Filter>Code\transporter\network\messages</Filter>
     </ClInclude>
-    <ClInclude Include="TransporterInterfaceQt.h">
-      <Filter>Code\transporter\interfaces</Filter>
+    <ClInclude Include="TransporterInterfaceQtQIODevice.h">
+      <Filter>Code\transporter\interfaces\qt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

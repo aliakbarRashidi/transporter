@@ -147,7 +147,7 @@
     <ClCompile Include="MemoryStream.cpp" />
     <ClCompile Include="NetworkStream.cpp" />
     <ClCompile Include="TransactionException.cpp" />
-    <ClCompile Include="TransporterInterfaceQt.cpp" />
+    <ClCompile Include="TransporterInterfaceQtQIODevice.cpp" />
     <ClCompile Include="UnknownMessage.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +163,7 @@
     <ClInclude Include="ssize_t.h" />
     <ClInclude Include="TransactionException.h" />
     <ClInclude Include="Transporter.h" />
-    <ClInclude Include="TransporterInterfaceQt.h" />
+    <ClInclude Include="TransporterInterfaceQtQIODevice.h" />
     <ClInclude Include="UnknownMessage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
