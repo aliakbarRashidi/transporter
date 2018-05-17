@@ -148,6 +148,8 @@
     <ClCompile Include="NetworkStream.cpp" />
     <ClCompile Include="TransactionException.cpp" />
     <ClCompile Include="TransporterInterfaceQtQIODevice.cpp" />
+    <ClCompile Include="TransporterInterfaceSfmlTcpSocket.cpp" />
+    <ClCompile Include="TransporterInterfaceSfmlUdpSocket.cpp" />
     <ClCompile Include="UnknownMessage.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +166,8 @@
     <ClInclude Include="TransactionException.h" />
     <ClInclude Include="Transporter.h" />
     <ClInclude Include="TransporterInterfaceQtQIODevice.h" />
+    <ClInclude Include="TransporterInterfaceSfmlTcpSocket.h" />
+    <ClInclude Include="TransporterInterfaceSfmlUdpSocket.h" />
     <ClInclude Include="UnknownMessage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,10 +1,10 @@
 #pragma once
 
+#include "Transporter.h"
+
 #include <functional>
 #include <memory>
 #include <type_traits>
-
-#include "Transporter.h"
 
 #include "IByteStream.h"
 #include "IDataInput.h"

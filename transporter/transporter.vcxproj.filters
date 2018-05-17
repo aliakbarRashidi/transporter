@@ -34,6 +34,9 @@
     <Filter Include="Code\transporter\interfaces\sfml">
       <UniqueIdentifier>{f59230d3-d0e7-4c26-8a2f-049645b0025c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\transporter\interfaces\boost">
+      <UniqueIdentifier>{1ebd3be7-2183-4123-aa27-8fbc3268d56e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
@@ -53,6 +56,12 @@
     </ClCompile>
     <ClCompile Include="TransporterInterfaceQtQIODevice.cpp">
       <Filter>Code\transporter\interfaces\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="TransporterInterfaceSfmlTcpSocket.cpp">
+      <Filter>Code\transporter\interfaces\sfml</Filter>
+    </ClCompile>
+    <ClCompile Include="TransporterInterfaceSfmlUdpSocket.cpp">
+      <Filter>Code\transporter\interfaces\sfml</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="TransporterInterfaceQtQIODevice.h">
       <Filter>Code\transporter\interfaces\qt</Filter>
+    </ClInclude>
+    <ClInclude Include="TransporterInterfaceSfmlTcpSocket.h">
+      <Filter>Code\transporter\interfaces\sfml</Filter>
+    </ClInclude>
+    <ClInclude Include="TransporterInterfaceSfmlUdpSocket.h">
+      <Filter>Code\transporter\interfaces\sfml</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

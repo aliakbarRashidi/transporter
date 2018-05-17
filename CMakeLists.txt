@@ -15,5 +15,6 @@ set(TRANSPORTER_SRC_DIR transporter)
 
 transporter_set_option(TRANSPORTER_BUILD_INTERFACE_QT_QIODEVICE OFF BOOL "Build interface for Qt's QIODevice (requires Qt 5 to be installed)")
 transporter_set_option(TRANSPORTER_BUILD_INTERFACE_SFML_SOCKETS OFF BOOL "Build interface for SFML's sf::TcpSocket and sf::UdpSocket (requires SFML 2 to be installed)")
+transporter_set_option(TRANSPORTER_BUILD_INTERFACE_BOOST_ASIO_SOCKETS OFF BOOL "Build interface for Boost.Asio's ip::tcp::socket and ip::udp::socket (requires Boost.Asio to be installed)")
 
 add_subdirectory(${TRANSPORTER_SRC_DIR})
