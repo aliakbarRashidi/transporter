@@ -25,17 +25,20 @@
     <Filter Include="Code\transporter\exceptions">
       <UniqueIdentifier>{0540c886-181b-49f5-8e13-2d04b294e5b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\transporter\interfaces">
+    <Filter Include="Code\transporter\adapters">
       <UniqueIdentifier>{ee84650a-70d7-4f2e-b060-1fc5dc7fa7f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\transporter\interfaces\qt">
+    <Filter Include="Code\transporter\adapters\qt">
       <UniqueIdentifier>{89512ab5-7975-43d0-9be5-78c23f3fc045}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\transporter\interfaces\sfml">
+    <Filter Include="Code\transporter\adapters\sfml">
       <UniqueIdentifier>{f59230d3-d0e7-4c26-8a2f-049645b0025c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\transporter\interfaces\boost">
+    <Filter Include="Code\transporter\adapters\boost">
       <UniqueIdentifier>{1ebd3be7-2183-4123-aa27-8fbc3268d56e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\transporter\adapters\boost\asio">
+      <UniqueIdentifier>{08c77507-6283-46d5-9292-e8e160a484bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,14 +57,20 @@
     <ClCompile Include="UnknownMessage.cpp">
       <Filter>Code\transporter\network\messages</Filter>
     </ClCompile>
-    <ClCompile Include="TransporterInterfaceQtQIODevice.cpp">
-      <Filter>Code\transporter\interfaces\qt</Filter>
+    <ClCompile Include="TransporterAdapterSfmlTcpSocket.cpp">
+      <Filter>Code\transporter\adapters\sfml</Filter>
     </ClCompile>
-    <ClCompile Include="TransporterInterfaceSfmlTcpSocket.cpp">
-      <Filter>Code\transporter\interfaces\sfml</Filter>
+    <ClCompile Include="TransporterAdapterSfmlUdpSocket.cpp">
+      <Filter>Code\transporter\adapters\sfml</Filter>
     </ClCompile>
-    <ClCompile Include="TransporterInterfaceSfmlUdpSocket.cpp">
-      <Filter>Code\transporter\interfaces\sfml</Filter>
+    <ClCompile Include="TransporterAdapterQtQAbstractSocket.cpp">
+      <Filter>Code\transporter\adapters\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="TransporterAdapterBoostAsioTcpSocket.cpp">
+      <Filter>Code\transporter\adapters\boost\asio</Filter>
+    </ClCompile>
+    <ClCompile Include="TransporterAdapterBoostAsioUdpSocket.cpp">
+      <Filter>Code\transporter\adapters\boost\asio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,14 +113,20 @@
     <ClInclude Include="UnknownMessage.h">
       <Filter>Code\transporter\network\messages</Filter>
     </ClInclude>
-    <ClInclude Include="TransporterInterfaceQtQIODevice.h">
-      <Filter>Code\transporter\interfaces\qt</Filter>
+    <ClInclude Include="TransporterAdapterSfmlTcpSocket.h">
+      <Filter>Code\transporter\adapters\sfml</Filter>
     </ClInclude>
-    <ClInclude Include="TransporterInterfaceSfmlTcpSocket.h">
-      <Filter>Code\transporter\interfaces\sfml</Filter>
+    <ClInclude Include="TransporterAdapterSfmlUdpSocket.h">
+      <Filter>Code\transporter\adapters\sfml</Filter>
     </ClInclude>
-    <ClInclude Include="TransporterInterfaceSfmlUdpSocket.h">
-      <Filter>Code\transporter\interfaces\sfml</Filter>
+    <ClInclude Include="TransporterAdapterQtQAbstractSocket.h">
+      <Filter>Code\transporter\adapters\qt</Filter>
+    </ClInclude>
+    <ClInclude Include="TransporterAdapterBoostAsioTcpSocket.h">
+      <Filter>Code\transporter\adapters\boost\asio</Filter>
+    </ClInclude>
+    <ClInclude Include="TransporterAdapterBoostAsioUdpSocket.h">
+      <Filter>Code\transporter\adapters\boost\asio</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,8 +1,7 @@
-#include "TransporterInterfaceSfmlUdpSocket.h"
+#if defined(TRANSPORTER_BUILD_ADAPTER_SFML)
+#include "TransporterAdapterSfmlUdpSocket.h"
 
-#if defined(TRANSPORTER_BUILD_INTERFACE_SFML_SOCKETS)
-
-transporter::interfaces::sfml::TransporterInterfaceSfmlUdpSocket::TransporterInterfaceSfmlUdpSocket(sf::UdpSocket &socket, const sf::IpAddress &receiverAddress, unsigned short receiverPort) : IByteStream{},
+transporter::adapters::sfml::TransporterAdapterSfmlUdpSocket::TransporterAdapterSfmlUdpSocket(sf::UdpSocket &socket, const sf::IpAddress &receiverAddress, unsigned short receiverPort) : IByteStream{},
 m_socket{ socket },
 m_receiverAddress { receiverAddress },
 m_receiverPort{ receiverPort }
@@ -10,7 +9,7 @@ m_receiverPort{ receiverPort }
 }
 
 
-std::unique_ptr<transporter::data::Buffer> transporter::interfaces::sfml::TransporterInterfaceSfmlUdpSocket::readBytes(std::size_t count) noexcept
+std::unique_ptr<transporter::data::Buffer> transporter::adapters::sfml::TransporterAdapterSfmlUdpSocket::readBytes(std::size_t count) noexcept
 {
 	try
 	{
@@ -39,7 +38,7 @@ std::unique_ptr<transporter::data::Buffer> transporter::interfaces::sfml::Transp
 	}
 }
 
-ssize_t transporter::interfaces::sfml::TransporterInterfaceSfmlUdpSocket::writeBytes(const transporter::data::Buffer &buffer) noexcept
+ssize_t transporter::adapters::sfml::TransporterAdapterSfmlUdpSocket::writeBytes(const transporter::data::Buffer &buffer) noexcept
 {
 	sf::Socket::Status status = m_socket.send(buffer.getRawBuffer(), buffer.getSize(), m_receiverAddress, m_receiverPort);
 
@@ -50,5 +49,4 @@ ssize_t transporter::interfaces::sfml::TransporterInterfaceSfmlUdpSocket::writeB
 
 	return -1;
 }
-
 #endif

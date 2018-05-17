@@ -147,9 +147,11 @@
     <ClCompile Include="MemoryStream.cpp" />
     <ClCompile Include="NetworkStream.cpp" />
     <ClCompile Include="TransactionException.cpp" />
-    <ClCompile Include="TransporterInterfaceQtQIODevice.cpp" />
-    <ClCompile Include="TransporterInterfaceSfmlTcpSocket.cpp" />
-    <ClCompile Include="TransporterInterfaceSfmlUdpSocket.cpp" />
+    <ClCompile Include="TransporterAdapterBoostAsioTcpSocket.cpp" />
+    <ClCompile Include="TransporterAdapterBoostAsioUdpSocket.cpp" />
+    <ClCompile Include="TransporterAdapterQtQAbstractSocket.cpp" />
+    <ClCompile Include="TransporterAdapterSfmlTcpSocket.cpp" />
+    <ClCompile Include="TransporterAdapterSfmlUdpSocket.cpp" />
     <ClCompile Include="UnknownMessage.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,9 +167,11 @@
     <ClInclude Include="ssize_t.h" />
     <ClInclude Include="TransactionException.h" />
     <ClInclude Include="Transporter.h" />
-    <ClInclude Include="TransporterInterfaceQtQIODevice.h" />
-    <ClInclude Include="TransporterInterfaceSfmlTcpSocket.h" />
-    <ClInclude Include="TransporterInterfaceSfmlUdpSocket.h" />
+    <ClInclude Include="TransporterAdapterBoostAsioTcpSocket.h" />
+    <ClInclude Include="TransporterAdapterBoostAsioUdpSocket.h" />
+    <ClInclude Include="TransporterAdapterQtQAbstractSocket.h" />
+    <ClInclude Include="TransporterAdapterSfmlTcpSocket.h" />
+    <ClInclude Include="TransporterAdapterSfmlUdpSocket.h" />
     <ClInclude Include="UnknownMessage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
