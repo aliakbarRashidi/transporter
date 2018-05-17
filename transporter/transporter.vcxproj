@@ -147,11 +147,6 @@
     <ClCompile Include="MemoryStream.cpp" />
     <ClCompile Include="NetworkStream.cpp" />
     <ClCompile Include="TransactionException.cpp" />
-    <ClCompile Include="TransporterAdapterBoostAsioTcpSocket.cpp" />
-    <ClCompile Include="TransporterAdapterBoostAsioUdpSocket.cpp" />
-    <ClCompile Include="TransporterAdapterQtQAbstractSocket.cpp" />
-    <ClCompile Include="TransporterAdapterSfmlTcpSocket.cpp" />
-    <ClCompile Include="TransporterAdapterSfmlUdpSocket.cpp" />
     <ClCompile Include="UnknownMessage.cpp" />
   </ItemGroup>
   <ItemGroup>

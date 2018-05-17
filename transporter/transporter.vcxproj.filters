@@ -57,21 +57,6 @@
     <ClCompile Include="UnknownMessage.cpp">
       <Filter>Code\transporter\network\messages</Filter>
     </ClCompile>
-    <ClCompile Include="TransporterAdapterSfmlTcpSocket.cpp">
-      <Filter>Code\transporter\adapters\sfml</Filter>
-    </ClCompile>
-    <ClCompile Include="TransporterAdapterSfmlUdpSocket.cpp">
-      <Filter>Code\transporter\adapters\sfml</Filter>
-    </ClCompile>
-    <ClCompile Include="TransporterAdapterQtQAbstractSocket.cpp">
-      <Filter>Code\transporter\adapters\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="TransporterAdapterBoostAsioTcpSocket.cpp">
-      <Filter>Code\transporter\adapters\boost\asio</Filter>
-    </ClCompile>
-    <ClCompile Include="TransporterAdapterBoostAsioUdpSocket.cpp">
-      <Filter>Code\transporter\adapters\boost\asio</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Transporter.h">
