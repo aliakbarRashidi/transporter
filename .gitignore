@@ -287,9 +287,6 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-# Doxygen
-doc/**
-
 # CMake
 CMakeFiles/**
 CMakeCache.txt
