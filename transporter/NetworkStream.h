@@ -52,7 +52,7 @@ namespace transporter
 				*
 				* @return Pointer to the newly-constructed, received network message. Return \c nullptr if no message was available or a transporter::network::messages::UnknownMessage if data was available but \p selector returned \c nullptr
 				*/
-				transporter::network::messages::NetworkMessagePtr receiveMessage(const transporter::network::io::NetworkMessageSelector &selector) noexcept;
+				transporter::network::messages::NetworkMessagePtr receiveMessage(const transporter::network::io::NetworkMessageSelector &selector);
 
 
 				/**

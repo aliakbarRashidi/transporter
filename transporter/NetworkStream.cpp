@@ -46,7 +46,7 @@ void transporter::network::io::NetworkStream::sendMessage(const transporter::net
 	}
 }
 
-transporter::network::messages::NetworkMessagePtr transporter::network::io::NetworkStream::receiveMessage(const transporter::network::io::NetworkMessageSelector &selector) noexcept
+transporter::network::messages::NetworkMessagePtr transporter::network::io::NetworkStream::receiveMessage(const transporter::network::io::NetworkMessageSelector &selector)
 {
 	if (this->startReadTransaction())
 	{
