@@ -209,7 +209,7 @@ namespace transporter
 					} while (value != 0 && bitsHandled < sizeof(T) * 8);
 				}
 
-				static constexpr bool isBigEndian() noexcept;
+				static bool isBigEndian() noexcept;
 
 				template<typename T>
 				T readData() noexcept

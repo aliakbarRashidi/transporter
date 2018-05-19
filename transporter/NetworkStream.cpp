@@ -407,7 +407,7 @@ void transporter::network::io::NetworkStream::writeString(const std::string &val
 }
 
 
-constexpr bool transporter::network::io::NetworkStream::isBigEndian() noexcept
+bool transporter::network::io::NetworkStream::isBigEndian() noexcept
 {
 	static const uint16_t dummy{ 0x00FF };
 	return reinterpret_cast<const uint8_t*>(&dummy)[1] == 0xFF ? true : false;

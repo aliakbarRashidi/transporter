@@ -32,7 +32,9 @@ namespace transporter
 {
 	namespace exceptions
 	{
+#if defined(_MSC_VER)
 		class TRANSPORTER_DLL std::exception; // NOTE: exporting std::exception because TransactionException inherits from it and otherwise MSVC will produce a C4251 warning
+#endif
 
 		/**
 		* @brief Exception class for transaction-related errors

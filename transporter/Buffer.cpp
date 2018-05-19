@@ -27,6 +27,8 @@
 
 #include "Buffer.h"
 
+#include <cstring>
+
 #include <algorithm>
 
 transporter::data::Buffer::Buffer() noexcept :
@@ -111,7 +113,7 @@ bool transporter::data::Buffer::operator==(const transporter::data::Buffer &rhs)
 		return false;
 	}
 
-	return std::equal(m_buffer.get(), m_buffer.get() + m_bufferSize, rhs.m_buffer.get(), rhs.m_buffer.get() + m_bufferSize);
+	return std::memcmp(m_buffer.get(), rhs.m_buffer.get(), m_bufferSize) == 0;
 }
 
 

@@ -1,5 +1,7 @@
 #include "catch.hpp"
 
+#include <cstring>
+
 #include <limits>
 #include <memory>
 
@@ -14,7 +16,7 @@ transporter::network::messages::NetworkMessagePtr networkMessageTestSelector(tra
 	switch (id)
 	{
 	case TestMessage::MESSAGE_ID:
-		return std::make_unique<TestMessage>();
+		return std::unique_ptr<TestMessage>{ new TestMessage{} };
 	default:
 		return nullptr;
 	}

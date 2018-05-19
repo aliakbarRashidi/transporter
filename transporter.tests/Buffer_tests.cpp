@@ -8,6 +8,7 @@
 
 #include <cstddef>
 #include <cstdlib>
+#include <cstring>
 
 #include <limits>
 #include <stdexcept>
@@ -80,7 +81,7 @@ TEST_CASE("Constructors")
 	{
 		const char *initialBufferHelper = "Hello World";
 		std::size_t initialBufferLen = std::strlen(initialBufferHelper);
-		std::unique_ptr<char[]> initialBuffer = std::make_unique<char[]>(initialBufferLen);
+		std::unique_ptr<char[]> initialBuffer{ new char[initialBufferLen] };
 		transporter::data::Buffer buffer{};
 
 		std::copy(initialBufferHelper, initialBufferHelper + initialBufferLen, initialBuffer.get());
