@@ -17,7 +17,7 @@ m_writeTransactionError{ false }
 }
 
 
-void transporter::network::io::NetworkStream::sendMessage(const transporter::network::messages::INetworkMessage &message) throw(std::bad_alloc, std::overflow_error, transporter::exceptions::TransactionException)
+void transporter::network::io::NetworkStream::sendMessage(const transporter::network::messages::INetworkMessage &message)
 {
 	if (this->startWriteTransaction())
 	{

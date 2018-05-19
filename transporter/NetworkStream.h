@@ -41,7 +41,7 @@ namespace transporter
 				/**
 				* @brief Send \p message to the underlying stream
 				*/
-				void sendMessage(const transporter::network::messages::INetworkMessage &message) throw(std::bad_alloc, std::overflow_error, transporter::exceptions::TransactionException);
+				void sendMessage(const transporter::network::messages::INetworkMessage &message);
 				
 				/**
 				* @brief Try to receive a network message

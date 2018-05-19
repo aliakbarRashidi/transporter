@@ -64,7 +64,7 @@ std::size_t transporter::data::io::MemoryStream::getLength() const noexcept
 }
 
 
-void transporter::data::io::MemoryStream::setPosition(std::size_t pos) throw(std::invalid_argument)
+void transporter::data::io::MemoryStream::setPosition(std::size_t pos)
 {
 	if (pos <= m_buffer.getSize())
 	{

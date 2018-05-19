@@ -28,12 +28,12 @@ namespace transporter
 			/**
 			* @brief Initialize a buffer of size \p size
 			*/
-			Buffer(std::size_t size) throw(std::bad_alloc);
+			Buffer(std::size_t size);
 
 			/**
 			* @brief Initialize a buffer by copying \p other into this buffer
 			*/
-			Buffer(const transporter::data::Buffer &other) throw(std::bad_alloc, std::overflow_error);
+			Buffer(const transporter::data::Buffer &other);
 
 			/**
 			* @brief Initialize a buffer by moving \p other into this buffer
@@ -43,7 +43,7 @@ namespace transporter
 			/**
 			* @brief Initialize a buffer by copying \p bufferSize bytes from \p buffer into this buffer
 			*/
-			Buffer(const char *buffer, std::size_t bufferSize) throw(std::bad_alloc);
+			Buffer(const char *buffer, std::size_t bufferSize);
 
 			/**
 			* @brief Initialize a buffer by moving \p buffer into its internal buffer and setting \p bufferSize to its internal buffer size
@@ -58,7 +58,7 @@ namespace transporter
 			*
 			* @return Reference to this buffer
 			*/
-			transporter::data::Buffer &operator=(const transporter::data::Buffer &rhs) throw(std::bad_alloc, std::overflow_error);
+			transporter::data::Buffer &operator=(const transporter::data::Buffer &rhs);
 
 			/**
 			* @brief Move \p rhs to this buffer
@@ -73,14 +73,14 @@ namespace transporter
 			*
 			* @return Newly-constructed buffer result of the concatenation of this buffer and \p rhs
 			*/
-			transporter::data::Buffer operator+(const transporter::data::Buffer &rhs) throw(std::bad_alloc, std::overflow_error);
+			transporter::data::Buffer operator+(const transporter::data::Buffer &rhs);
 
 			/**
 			* @brief Concatenate \p rhs to this buffer
 			*
 			* @return Reference to this buffer
 			*/
-			transporter::data::Buffer &operator+=(const transporter::data::Buffer &rhs) throw(std::bad_alloc, std::overflow_error);
+			transporter::data::Buffer &operator+=(const transporter::data::Buffer &rhs);
 
 
 			/**
@@ -96,14 +96,14 @@ namespace transporter
 			*
 			* @return Byte value at index \p index of this buffer
 			*/
-			char operator[](std::size_t index) const throw(std::out_of_range);
+			char operator[](std::size_t index) const;
 
 			/**
 			* @brief Return a reference to the byte at index \p index of this buffer (mutator)
 			*
 			* @return Reference to the byte at index \p index of this buffer
 			*/
-			char &operator[](std::size_t index) throw(std::out_of_range);
+			char &operator[](std::size_t index);
 
 
 			/**
@@ -132,7 +132,7 @@ namespace transporter
 			*
 			* @return Pointer to newly-constructed transporter::data::Buffer containing the slice
 			*/
-			transporter::data::BufferPtr getSlice(std::size_t beginning, std::size_t length) const throw(std::bad_alloc, std::invalid_argument);
+			transporter::data::BufferPtr getSlice(std::size_t beginning, std::size_t length) const;
 
 
 			/**
@@ -145,22 +145,22 @@ namespace transporter
 			/**
 			* @brief Extend this buffer by \p increase bytes
 			*/
-			void extend(std::size_t increase) throw(std::bad_alloc, std::overflow_error);
+			void extend(std::size_t increase);
 
 			/**
 			* @brief Insert \p buffer at index \p at in this buffer
 			*/
-			void insert(const transporter::data::Buffer &buffer, std::size_t at) throw(std::bad_alloc, std::invalid_argument, std::overflow_error);
+			void insert(const transporter::data::Buffer &buffer, std::size_t at);
 
 			/**
 			* @brief Shrink this buffer by the end of \p decrease bytes
 			*/
-			void shrinkEnd(std::size_t decrease) throw(std::bad_alloc, std::length_error);
+			void shrinkEnd(std::size_t decrease);
 
 			/**
 			* @brief Shrink this buffer by the beginning of \p decrease bytes
 			*/
-			void shrinkBeginning(std::size_t decrease) throw(std::bad_alloc, std::length_error);
+			void shrinkBeginning(std::size_t decrease);
 
 			/**
 			* @brief Reverse this buffer
@@ -172,11 +172,11 @@ namespace transporter
 			*
 			* @return Pointer to the newly-constructed slice
 			*/
-			transporter::data::BufferPtr slice(std::size_t beginning, std::size_t length) throw(std::bad_alloc, std::invalid_argument);
+			transporter::data::BufferPtr slice(std::size_t beginning, std::size_t length);
 
 
 		private:
-			void concatenate(const transporter::data::Buffer &buffer) throw(std::bad_alloc, std::overflow_error);
+			void concatenate(const transporter::data::Buffer &buffer);
 			void reset() noexcept;
 
 			std::unique_ptr<char[]> m_buffer;

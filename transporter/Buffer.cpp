@@ -12,13 +12,13 @@ m_bufferSize{ 0 }
 {
 }
 
-transporter::data::Buffer::Buffer(std::size_t size) throw(std::bad_alloc) :
+transporter::data::Buffer::Buffer(std::size_t size) :
 m_buffer{ std::make_unique<char[]>(size) },
 m_bufferSize{ size }
 {
 }
 
-transporter::data::Buffer::Buffer(const transporter::data::Buffer &other) throw(std::bad_alloc, std::overflow_error) : Buffer{}
+transporter::data::Buffer::Buffer(const transporter::data::Buffer &other) : Buffer{}
 {
 	this->concatenate(other);
 }
@@ -30,7 +30,7 @@ m_bufferSize{ other.m_bufferSize }
 	other.reset();
 }
 
-transporter::data::Buffer::Buffer(const char *buffer, std::size_t bufferSize) throw(std::bad_alloc) :
+transporter::data::Buffer::Buffer(const char *buffer, std::size_t bufferSize) :
 m_buffer{},
 m_bufferSize{ bufferSize }
 {
@@ -45,7 +45,7 @@ m_bufferSize{ bufferSize }
 }
 
 
-transporter::data::Buffer &transporter::data::Buffer::operator=(const transporter::data::Buffer &rhs) throw(std::bad_alloc, std::overflow_error)
+transporter::data::Buffer &transporter::data::Buffer::operator=(const transporter::data::Buffer &rhs)
 {
 	this->reset();
 	this->concatenate(rhs);
@@ -64,7 +64,7 @@ transporter::data::Buffer &transporter::data::Buffer::operator=(transporter::dat
 }
 
 
-transporter::data::Buffer transporter::data::Buffer::operator+(const transporter::data::Buffer &rhs) throw(std::bad_alloc, std::overflow_error)
+transporter::data::Buffer transporter::data::Buffer::operator+(const transporter::data::Buffer &rhs)
 {
 	Buffer buffer{ *this };
 
@@ -73,7 +73,7 @@ transporter::data::Buffer transporter::data::Buffer::operator+(const transporter
 	return buffer;
 }
 
-transporter::data::Buffer &transporter::data::Buffer::operator+=(const transporter::data::Buffer &rhs) throw(std::bad_alloc, std::overflow_error)
+transporter::data::Buffer &transporter::data::Buffer::operator+=(const transporter::data::Buffer &rhs)
 {
 	this->concatenate(rhs);
 
@@ -92,7 +92,7 @@ bool transporter::data::Buffer::operator==(const transporter::data::Buffer &rhs)
 }
 
 
-char transporter::data::Buffer::operator[](std::size_t index) const throw(std::out_of_range)
+char transporter::data::Buffer::operator[](std::size_t index) const
 {
 	if (index < m_bufferSize)
 	{
@@ -102,7 +102,7 @@ char transporter::data::Buffer::operator[](std::size_t index) const throw(std::o
 	throw std::out_of_range("index is out of buffer range");
 }
 
-char &transporter::data::Buffer::operator[](std::size_t index) throw(std::out_of_range)
+char &transporter::data::Buffer::operator[](std::size_t index)
 {
 	if (index < m_bufferSize)
 	{
@@ -128,7 +128,7 @@ std::size_t transporter::data::Buffer::getSize() const noexcept
 	return m_bufferSize;
 }
 
-transporter::data::BufferPtr transporter::data::Buffer::getSlice(std::size_t beginning, std::size_t length) const throw(std::bad_alloc, std::invalid_argument)
+transporter::data::BufferPtr transporter::data::Buffer::getSlice(std::size_t beginning, std::size_t length) const
 {
 	if (beginning + length > beginning)
 	{
@@ -166,7 +166,7 @@ char *transporter::data::Buffer::release() noexcept
 	return rawBuffer;
 }
 
-void transporter::data::Buffer::extend(std::size_t increase) throw(std::bad_alloc, std::overflow_error)
+void transporter::data::Buffer::extend(std::size_t increase)
 {
 	if (m_bufferSize + increase > m_bufferSize)
 	{
@@ -187,7 +187,7 @@ void transporter::data::Buffer::extend(std::size_t increase) throw(std::bad_allo
 	}
 }
 
-void transporter::data::Buffer::insert(const transporter::data::Buffer &buffer, std::size_t at) throw(std::bad_alloc, std::invalid_argument, std::overflow_error)
+void transporter::data::Buffer::insert(const transporter::data::Buffer &buffer, std::size_t at)
 {
 	if (at <= m_bufferSize)
 	{
@@ -224,7 +224,7 @@ void transporter::data::Buffer::insert(const transporter::data::Buffer &buffer, 
 	}
 }
 
-void transporter::data::Buffer::shrinkEnd(std::size_t decrease) throw(std::bad_alloc, std::length_error)
+void transporter::data::Buffer::shrinkEnd(std::size_t decrease)
 {
 	if (decrease <= m_bufferSize && decrease > 0)
 	{
@@ -245,7 +245,7 @@ void transporter::data::Buffer::shrinkEnd(std::size_t decrease) throw(std::bad_a
 	}
 }
 
-void transporter::data::Buffer::shrinkBeginning(std::size_t decrease) throw(std::bad_alloc, std::length_error)
+void transporter::data::Buffer::shrinkBeginning(std::size_t decrease)
 {
 	if (decrease <= m_bufferSize && decrease > 0)
 	{
@@ -271,7 +271,7 @@ void transporter::data::Buffer::reverse() const noexcept
 	std::reverse(m_buffer.get(), m_buffer.get() + m_bufferSize);
 }
 
-transporter::data::BufferPtr transporter::data::Buffer::slice(std::size_t beginning, std::size_t length) throw(std::bad_alloc, std::invalid_argument)
+transporter::data::BufferPtr transporter::data::Buffer::slice(std::size_t beginning, std::size_t length)
 {
 	if (beginning + length > beginning)
 	{
@@ -314,7 +314,7 @@ transporter::data::BufferPtr transporter::data::Buffer::slice(std::size_t beginn
 }
 
 
-void transporter::data::Buffer::concatenate(const transporter::data::Buffer &buffer) throw(std::bad_alloc, std::overflow_error)
+void transporter::data::Buffer::concatenate(const transporter::data::Buffer &buffer)
 {
 	if (m_bufferSize + buffer.m_bufferSize > m_bufferSize)
 	{

@@ -44,7 +44,7 @@ namespace transporter
 				*
 				* @param pos Position to set this stream to
 				*/
-				void setPosition(std::size_t pos) throw(std::invalid_argument);
+				void setPosition(std::size_t pos);
 
 
 			private:
