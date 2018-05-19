@@ -36,7 +36,7 @@ m_bufferSize{ 0 }
 }
 
 transporter::data::Buffer::Buffer(std::size_t size) :
-m_buffer{ std::make_unique<char[]>(size) },
+m_buffer{ new char[size] },
 m_bufferSize{ size }
 {
 }
@@ -57,7 +57,7 @@ transporter::data::Buffer::Buffer(const char *buffer, std::size_t bufferSize) :
 m_buffer{},
 m_bufferSize{ bufferSize }
 {
-	m_buffer = std::make_unique<char[]>(bufferSize);
+	m_buffer = std::unique_ptr<char[]>{ new char[bufferSize] };
 	std::copy(buffer, buffer + bufferSize, m_buffer.get());
 }
 
@@ -193,7 +193,7 @@ void transporter::data::Buffer::extend(std::size_t increase)
 {
 	if (m_bufferSize + increase > m_bufferSize)
 	{
-		std::unique_ptr<char[]> newBuffer = std::make_unique<char[]>(m_bufferSize + increase);
+		std::unique_ptr<char[]> newBuffer{ new char[m_bufferSize + increase] };
 
 		if (m_buffer)
 		{
@@ -216,7 +216,7 @@ void transporter::data::Buffer::insert(const transporter::data::Buffer &buffer, 
 	{
 		if (m_bufferSize + buffer.getSize() > m_bufferSize)
 		{
-			std::unique_ptr<char[]> newBuffer = std::make_unique<char[]>(m_bufferSize + buffer.getSize());
+			std::unique_ptr<char[]> newBuffer{ new char[m_bufferSize + buffer.getSize()] };
 			std::size_t endLength = m_bufferSize - at;
 
 			if (at > 0)
@@ -251,7 +251,7 @@ void transporter::data::Buffer::shrinkEnd(std::size_t decrease)
 {
 	if (decrease <= m_bufferSize && decrease > 0)
 	{
-		std::unique_ptr<char[]> newBuffer = std::make_unique<char[]>(m_bufferSize - decrease);
+		std::unique_ptr<char[]> newBuffer{ new char[m_bufferSize - decrease] };
 
 		if (m_buffer)
 		{
@@ -272,7 +272,7 @@ void transporter::data::Buffer::shrinkBeginning(std::size_t decrease)
 {
 	if (decrease <= m_bufferSize && decrease > 0)
 	{
-		std::unique_ptr<char[]> newBuffer = std::make_unique<char[]>(m_bufferSize - decrease);
+		std::unique_ptr<char[]> newBuffer{ new char[m_bufferSize - decrease] };
 
 		if (m_buffer)
 		{
@@ -301,7 +301,7 @@ transporter::data::BufferPtr transporter::data::Buffer::slice(std::size_t beginn
 		if (beginning + length <= m_bufferSize)
 		{
 			transporter::data::BufferPtr sliceBuffer{ new data::Buffer{ length } };
-			std::unique_ptr<char[]> newBuffer = std::make_unique<char[]>(m_bufferSize - length);
+			std::unique_ptr<char[]> newBuffer{ new char[m_bufferSize - length] };
 
 			if (m_buffer)
 			{
@@ -341,7 +341,7 @@ void transporter::data::Buffer::concatenate(const transporter::data::Buffer &buf
 {
 	if (m_bufferSize + buffer.m_bufferSize > m_bufferSize)
 	{
-		std::unique_ptr<char[]> newBuffer = std::make_unique<char[]>(m_bufferSize + buffer.m_bufferSize);
+		std::unique_ptr<char[]> newBuffer{ new char[m_bufferSize + buffer.m_bufferSize] };
 
 		if (m_buffer)
 		{

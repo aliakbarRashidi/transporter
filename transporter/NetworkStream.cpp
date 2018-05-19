@@ -79,7 +79,7 @@ transporter::network::messages::NetworkMessagePtr transporter::network::io::Netw
 
 		if (msg == nullptr)
 		{
-			msg = std::make_unique<transporter::network::messages::UnknownMessage>(msgId, msgDataSize);
+			msg = std::unique_ptr<transporter::network::messages::UnknownMessage>{ new transporter::network::messages::UnknownMessage{ msgId, msgDataSize } };
 		}
 
 		msg->deserialize(*this);
