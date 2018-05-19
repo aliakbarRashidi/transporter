@@ -4,7 +4,7 @@
 
 #include "Buffer_tests.h"
 
-#include <catch/catch.hpp>
+#include "catch.hpp"
 
 #include <cstddef>
 #include <cstdlib>
