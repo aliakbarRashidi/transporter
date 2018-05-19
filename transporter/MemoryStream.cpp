@@ -30,7 +30,7 @@ transporter::data::BufferPtr transporter::data::io::MemoryStream::readBytes(std:
 
 ssize_t transporter::data::io::MemoryStream::writeBytes(const transporter::data::Buffer &buffer) noexcept
 {
-	if (buffer.getSize() <= std::numeric_limits<ssize_t>::max())
+	if (buffer.getSize() <= static_cast<std::size_t>(std::numeric_limits<ssize_t>::max()))
 	{
 		try
 		{
