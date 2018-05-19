@@ -88,7 +88,7 @@ bool transporter::data::Buffer::operator==(const transporter::data::Buffer &rhs)
 		return false;
 	}
 
-	std::equal(m_buffer.get(), m_buffer.get() + m_bufferSize, rhs.m_buffer.get(), rhs.m_buffer.get() + m_bufferSize);
+	return std::equal(m_buffer.get(), m_buffer.get() + m_bufferSize, rhs.m_buffer.get(), rhs.m_buffer.get() + m_bufferSize);
 }
 
 
@@ -152,7 +152,7 @@ transporter::data::BufferPtr transporter::data::Buffer::getSlice(std::size_t beg
 
 	else
 	{
-		std::invalid_argument("beginning + length overflows std::size_t");
+		throw std::invalid_argument("beginning + length overflows std::size_t");
 	}
 }
 
@@ -309,7 +309,7 @@ transporter::data::BufferPtr transporter::data::Buffer::slice(std::size_t beginn
 
 	else
 	{
-		std::invalid_argument("beginning + length overflows std::size_t");
+		throw std::invalid_argument("beginning + length overflows std::size_t");
 	}
 }
 
