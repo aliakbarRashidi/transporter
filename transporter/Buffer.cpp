@@ -1,5 +1,5 @@
 #if defined(_MSC_VER)
-#pragma warning( disable : 4996 )
+#pragma warning( disable : 4996 ) // NOTE: error C4996 "Call to std::X with parameters that may be unsafe..." can be safely disabled
 #endif
 
 #include "Buffer.h"

@@ -46,7 +46,16 @@ namespace transporter
 			private:
 				transporter::network::messages::NetworkMessageId m_messageId;
 				std::size_t m_messageSize;
+
+				// NOTE: warning C4251 "class X needs to have dll-interface to be used by clients of class..." can be safely disabled as it is private and won't be used by any client
+#if defined(_MSC_VER)
+#pragma warning( push )
+#pragma warning( disable : 4251)
+#endif
 				transporter::data::BufferPtr m_messageData;
+#if defined(_MSC_VER)
+#pragma warning( pop )
+#endif
 			};
 		}
 	}

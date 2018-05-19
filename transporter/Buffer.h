@@ -179,7 +179,16 @@ namespace transporter
 			void concatenate(const transporter::data::Buffer &buffer);
 			void reset() noexcept;
 
+			// NOTE: warning C4251 "class X needs to have dll-interface to be used by clients of class..." can be safely disabled as it is private and won't be used by any client
+#if defined(_MSC_VER)
+#pragma warning( push )
+#pragma warning( disable : 4251)
+#endif
 			std::unique_ptr<char[]> m_buffer;
+#if defined(_MSC_VER)
+#pragma warning( pop )
+#endif
+
 			std::size_t m_bufferSize;
 		};
 	}
