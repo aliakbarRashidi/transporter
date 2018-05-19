@@ -1,5 +1,3 @@
-set(TRANSPORTER_TARGET transporter)
-
 set(TRANSPORTER_SRC
 	Buffer.cpp
 	MemoryStream.cpp
