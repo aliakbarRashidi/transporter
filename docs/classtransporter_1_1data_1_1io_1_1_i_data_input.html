@@ -31,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Transporter Library
    </div>
-   <div id="projectbrief">C++ library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
+   <div id="projectbrief">Cross-platform, modern C++ 11 library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
   </td>
  </tr>
  </tbody>
@@ -150,9 +150,9 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <tr class="memdesc:adabf1a4afa65ccd8bc010a2d47ca0f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a string of characters prefixed with its size (as an unsigned 4-byte integer number) from the underlying input. <br /></td></tr>
 <tr class="separator:adabf1a4afa65ccd8bc010a2d47ca0f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html">transporter::data::io::IByteInput</a></td></tr>
-<tr class="memitem:ada05899e64924c847b92a5bf61d3ff5b inherit pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b">readBytes</a> (std::size_t count) noexcept=0</td></tr>
-<tr class="memdesc:ada05899e64924c847b92a5bf61d3ff5b inherit pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b">More...</a><br /></td></tr>
-<tr class="separator:ada05899e64924c847b92a5bf61d3ff5b inherit pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eedf2ac2bb60a019fce02438a36c0fc inherit pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input"><td class="memItemLeft" align="right" valign="top">virtual transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc">readBytes</a> (std::size_t count) noexcept=0</td></tr>
+<tr class="memdesc:a1eedf2ac2bb60a019fce02438a36c0fc inherit pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc">More...</a><br /></td></tr>
+<tr class="separator:a1eedf2ac2bb60a019fce02438a36c0fc inherit pub_methods_classtransporter_1_1data_1_1io_1_1_i_byte_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface class for data inputs capable of reading standard integer, floating point and string types. </p>

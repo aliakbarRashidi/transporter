@@ -26,11 +26,11 @@ namespace transporter
 				}
 
 
-				virtual std::unique_ptr<transporter::data::Buffer> readBytes(std::size_t count) noexcept override
+				virtual transporter::data::BufferPtr readBytes(std::size_t count) noexcept override
 				{
 					try
 					{
-						transporter::data::BufferPtr buffer = transporter::data::BufferPtr{ new transporter::data::Buffer{ count } };
+						transporter::data::BufferPtr buffer{ new transporter::data::Buffer{ count } };
 						qint64 readNb = m_socket.read(buffer->getRawBuffer(), count);
 
 						if (readNb < 0)

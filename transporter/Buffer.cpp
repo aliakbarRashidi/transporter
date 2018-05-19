@@ -128,13 +128,13 @@ std::size_t transporter::data::Buffer::getSize() const noexcept
 	return m_bufferSize;
 }
 
-std::unique_ptr<transporter::data::Buffer> transporter::data::Buffer::getSlice(std::size_t beginning, std::size_t length) const throw(std::bad_alloc, std::invalid_argument)
+transporter::data::BufferPtr transporter::data::Buffer::getSlice(std::size_t beginning, std::size_t length) const throw(std::bad_alloc, std::invalid_argument)
 {
 	if (beginning + length > beginning)
 	{
 		if (beginning + length <= m_bufferSize)
 		{
-			std::unique_ptr<data::Buffer> sliceBuffer{ new data::Buffer{ length } };
+			transporter::data::BufferPtr sliceBuffer{ new data::Buffer{ length } };
 
 			if (m_buffer)
 			{
@@ -271,13 +271,13 @@ void transporter::data::Buffer::reverse() const noexcept
 	std::reverse(m_buffer.get(), m_buffer.get() + m_bufferSize);
 }
 
-std::unique_ptr<transporter::data::Buffer> transporter::data::Buffer::slice(std::size_t beginning, std::size_t length) throw(std::bad_alloc, std::invalid_argument)
+transporter::data::BufferPtr transporter::data::Buffer::slice(std::size_t beginning, std::size_t length) throw(std::bad_alloc, std::invalid_argument)
 {
 	if (beginning + length > beginning)
 	{
 		if (beginning + length <= m_bufferSize)
 		{
-			std::unique_ptr<data::Buffer> sliceBuffer{ new data::Buffer{ length } };
+			transporter::data::BufferPtr sliceBuffer{ new data::Buffer{ length } };
 			std::unique_ptr<char[]> newBuffer = std::make_unique<char[]>(m_bufferSize - length);
 
 			if (m_buffer)

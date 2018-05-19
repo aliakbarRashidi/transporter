@@ -11,6 +11,9 @@ namespace transporter
 {
 	namespace data
 	{
+		class Buffer;
+		typedef std::unique_ptr<transporter::data::Buffer> BufferPtr;
+
 		/**
 		* @brief Provide high-level operations on an array of bytes
 		*/
@@ -129,7 +132,7 @@ namespace transporter
 			*
 			* @return Pointer to newly-constructed transporter::data::Buffer containing the slice
 			*/
-			std::unique_ptr<transporter::data::Buffer> getSlice(std::size_t beginning, std::size_t length) const throw(std::bad_alloc, std::invalid_argument);
+			transporter::data::BufferPtr getSlice(std::size_t beginning, std::size_t length) const throw(std::bad_alloc, std::invalid_argument);
 
 
 			/**
@@ -169,7 +172,7 @@ namespace transporter
 			*
 			* @return Pointer to the newly-constructed slice
 			*/
-			std::unique_ptr<transporter::data::Buffer> slice(std::size_t beginning, std::size_t length) throw(std::bad_alloc, std::invalid_argument);
+			transporter::data::BufferPtr slice(std::size_t beginning, std::size_t length) throw(std::bad_alloc, std::invalid_argument);
 
 
 		private:
@@ -179,7 +182,5 @@ namespace transporter
 			std::unique_ptr<char[]> m_buffer;
 			std::size_t m_bufferSize;
 		};
-
-		typedef std::unique_ptr<transporter::data::Buffer> BufferPtr;
 	}
 }

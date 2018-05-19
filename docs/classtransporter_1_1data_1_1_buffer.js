@@ -11,7 +11,7 @@ var classtransporter_1_1data_1_1_buffer =
     [ "getRawBuffer", "classtransporter_1_1data_1_1_buffer.html#a952a449fdf700431fea736def4828518", null ],
     [ "getRawBuffer", "classtransporter_1_1data_1_1_buffer.html#a917b47a66c4c6c14a747a4604bbe2598", null ],
     [ "getSize", "classtransporter_1_1data_1_1_buffer.html#ad34d683657d8044eb789358961b17b8f", null ],
-    [ "getSlice", "classtransporter_1_1data_1_1_buffer.html#ac3b7934005062d22e31992655ba8fc4e", null ],
+    [ "getSlice", "classtransporter_1_1data_1_1_buffer.html#a6e523d577193a1cff61e0dceb20dcffd", null ],
     [ "insert", "classtransporter_1_1data_1_1_buffer.html#a54fb3bb58721e6de8a6101f13b783c59", null ],
     [ "operator+", "classtransporter_1_1data_1_1_buffer.html#a14a1411cbc174f084e87601c6b282f17", null ],
     [ "operator+=", "classtransporter_1_1data_1_1_buffer.html#a2b3151338eb96d7c3fa9441706a0037c", null ],
@@ -24,5 +24,5 @@ var classtransporter_1_1data_1_1_buffer =
     [ "reverse", "classtransporter_1_1data_1_1_buffer.html#ad4c1e4ebae37c2b4f5568ae1216aa65a", null ],
     [ "shrinkBeginning", "classtransporter_1_1data_1_1_buffer.html#aa878e79168b178df8a37e7909ab7bc9b", null ],
     [ "shrinkEnd", "classtransporter_1_1data_1_1_buffer.html#a5defd7cc27fc54d01a156c3c3c6c9079", null ],
-    [ "slice", "classtransporter_1_1data_1_1_buffer.html#a5a0e3dc4fe89bc0b0fa00edd875f30a7", null ]
+    [ "slice", "classtransporter_1_1data_1_1_buffer.html#a895ab7549bbfcc1324b5dd13ae5cbdd6", null ]
 ];

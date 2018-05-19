@@ -46,7 +46,7 @@ namespace transporter
 			private:
 				transporter::network::messages::NetworkMessageId m_messageId;
 				std::size_t m_messageSize;
-				std::unique_ptr<transporter::data::Buffer> m_messageData;
+				transporter::data::BufferPtr m_messageData;
 			};
 		}
 	}

@@ -99,7 +99,7 @@ namespace transporter
 				bool rollbackWriteTransaction() noexcept;
 
 
-				virtual std::unique_ptr<transporter::data::Buffer> readBytes(std::size_t count) noexcept override;
+				virtual transporter::data::BufferPtr readBytes(std::size_t count) noexcept override;
 				virtual ssize_t writeBytes(const transporter::data::Buffer &buffer) noexcept override;
 
 				virtual std::int8_t readInt8() noexcept override;
@@ -192,7 +192,7 @@ namespace transporter
 				T readData() noexcept
 				{
 					std::size_t dataSize = sizeof(T);
-					std::unique_ptr<data::Buffer> buffer = this->readBytes(dataSize);
+					transporter::data::BufferPtr buffer = this->readBytes(dataSize);
 					T data{};
 
 					if (buffer && buffer->getSize() == dataSize)

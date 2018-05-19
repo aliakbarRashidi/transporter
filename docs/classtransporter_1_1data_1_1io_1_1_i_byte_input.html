@@ -31,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Transporter Library
    </div>
-   <div id="projectbrief">C++ library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
+   <div id="projectbrief">Cross-platform, modern C++ 11 library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
   </td>
  </tr>
  </tbody>
@@ -103,15 +103,15 @@ $(document).ready(function(){initNavTree('classtransporter_1_1data_1_1io_1_1_i_b
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ada05899e64924c847b92a5bf61d3ff5b"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b">readBytes</a> (std::size_t count) noexcept=0</td></tr>
-<tr class="memdesc:ada05899e64924c847b92a5bf61d3ff5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#ada05899e64924c847b92a5bf61d3ff5b">More...</a><br /></td></tr>
-<tr class="separator:ada05899e64924c847b92a5bf61d3ff5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eedf2ac2bb60a019fce02438a36c0fc"><td class="memItemLeft" align="right" valign="top">virtual transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc">readBytes</a> (std::size_t count) noexcept=0</td></tr>
+<tr class="memdesc:a1eedf2ac2bb60a019fce02438a36c0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#a1eedf2ac2bb60a019fce02438a36c0fc">More...</a><br /></td></tr>
+<tr class="separator:a1eedf2ac2bb60a019fce02438a36c0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface class for byte inputs. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ada05899e64924c847b92a5bf61d3ff5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada05899e64924c847b92a5bf61d3ff5b">&#9670;&nbsp;</a></span>readBytes()</h2>
+<a id="a1eedf2ac2bb60a019fce02438a36c0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eedf2ac2bb60a019fce02438a36c0fc">&#9670;&nbsp;</a></span>readBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,7 +120,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a>&gt; transporter::data::io::IByteInput::readBytes </td>
+          <td class="memname">virtual transporter::data::BufferPtr transporter::data::io::IByteInput::readBytes </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>count</em></td><td>)</td>
@@ -147,7 +147,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a> containing the read bytes </dd></dl>
 
-<p>Implemented in <a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#adc72d33205b173fd35b5da63d31d67ab">transporter::network::io::NetworkStream</a>, <a class="el" href="classtransporter_1_1adapters_1_1sfml_1_1_transporter_adapter_sfml_udp_socket.html#a6ae3bfec158a78c2301b85b3c9d17d79">transporter::adapters::sfml::TransporterAdapterSfmlUdpSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1boost_1_1asio_1_1_transporter_adapter_boost_asio_udp_socket.html#ae52f71124745ac4494e9f097d74fe066">transporter::adapters::boost::asio::TransporterAdapterBoostAsioUdpSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1boost_1_1asio_1_1_transporter_adapter_boost_asio_tcp_socket.html#a04fb9cd671186bb0626cff3260a96835">transporter::adapters::boost::asio::TransporterAdapterBoostAsioTcpSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1qt_1_1_transporter_adapter_qt_q_abstract_socket.html#a1537040375bfa68a16317c9b71ea5435">transporter::adapters::qt::TransporterAdapterQtQAbstractSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1sfml_1_1_transporter_adapter_sfml_tcp_socket.html#a26b4f8f1c645ca16f3b847daf31ffbf9">transporter::adapters::sfml::TransporterAdapterSfmlTcpSocket</a>, and <a class="el" href="classtransporter_1_1data_1_1io_1_1_memory_stream.html#a78b72d03c7171cf5d7b4a4aca418549a">transporter::data::io::MemoryStream</a>.</p>
+<p>Implemented in <a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a5b4740e29e5836d3658eed926f782d48">transporter::network::io::NetworkStream</a>, <a class="el" href="classtransporter_1_1adapters_1_1sfml_1_1_transporter_adapter_sfml_udp_socket.html#ad041a616cf3aa0aa95a33446018128df">transporter::adapters::sfml::TransporterAdapterSfmlUdpSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1boost_1_1asio_1_1_transporter_adapter_boost_asio_udp_socket.html#ad482fde665ad4af177cf62739b1c68d4">transporter::adapters::boost::asio::TransporterAdapterBoostAsioUdpSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1boost_1_1asio_1_1_transporter_adapter_boost_asio_tcp_socket.html#a3181bbc86f19039fff022319b26f1ee2">transporter::adapters::boost::asio::TransporterAdapterBoostAsioTcpSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1qt_1_1_transporter_adapter_qt_q_abstract_socket.html#adceaaf2697cbee61534f0458d60f4598">transporter::adapters::qt::TransporterAdapterQtQAbstractSocket</a>, <a class="el" href="classtransporter_1_1adapters_1_1sfml_1_1_transporter_adapter_sfml_tcp_socket.html#a4825fbc7e70c422297510f6059dadc21">transporter::adapters::sfml::TransporterAdapterSfmlTcpSocket</a>, and <a class="el" href="classtransporter_1_1data_1_1io_1_1_memory_stream.html#aafef7224c0f040392f167a7d11388767">transporter::data::io::MemoryStream</a>.</p>
 
 </div>
 </div>

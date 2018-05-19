@@ -31,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Transporter Library
    </div>
-   <div id="projectbrief">C++ library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
+   <div id="projectbrief">Cross-platform, modern C++ 11 library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
   </td>
  </tr>
  </tbody>
@@ -106,9 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf7a33aa5dd8797d648ede49d1e1bc98"><td class="memItemLeft" align="right" valign="top"><a id="abf7a33aa5dd8797d648ede49d1e1bc98"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TransporterAdapterSfmlTcpSocket</b> (sf::TcpSocket &amp;socket)</td></tr>
 <tr class="separator:abf7a33aa5dd8797d648ede49d1e1bc98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26b4f8f1c645ca16f3b847daf31ffbf9"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1sfml_1_1_transporter_adapter_sfml_tcp_socket.html#a26b4f8f1c645ca16f3b847daf31ffbf9">readBytes</a> (std::size_t count) noexcept override</td></tr>
-<tr class="memdesc:a26b4f8f1c645ca16f3b847daf31ffbf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#a26b4f8f1c645ca16f3b847daf31ffbf9">More...</a><br /></td></tr>
-<tr class="separator:a26b4f8f1c645ca16f3b847daf31ffbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4825fbc7e70c422297510f6059dadc21"><td class="memItemLeft" align="right" valign="top">virtual transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1sfml_1_1_transporter_adapter_sfml_tcp_socket.html#a4825fbc7e70c422297510f6059dadc21">readBytes</a> (std::size_t count) noexcept override</td></tr>
+<tr class="memdesc:a4825fbc7e70c422297510f6059dadc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#a4825fbc7e70c422297510f6059dadc21">More...</a><br /></td></tr>
+<tr class="separator:a4825fbc7e70c422297510f6059dadc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9d6bcf7c8c8832279245d0ee84a5b7d"><td class="memItemLeft" align="right" valign="top">virtual ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1sfml_1_1_transporter_adapter_sfml_tcp_socket.html#aa9d6bcf7c8c8832279245d0ee84a5b7d">writeBytes</a> (const <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &amp;buffer) noexcept override</td></tr>
 <tr class="memdesc:aa9d6bcf7c8c8832279245d0ee84a5b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to write the bytes in <code>buffer</code> to the underlying output and return the number of bytes written.  <a href="#aa9d6bcf7c8c8832279245d0ee84a5b7d">More...</a><br /></td></tr>
 <tr class="separator:aa9d6bcf7c8c8832279245d0ee84a5b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,8 +116,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Adapter class for SFML's TCP sockets (sf::TcpSocket) </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a26b4f8f1c645ca16f3b847daf31ffbf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26b4f8f1c645ca16f3b847daf31ffbf9">&#9670;&nbsp;</a></span>readBytes()</h2>
+<a id="a4825fbc7e70c422297510f6059dadc21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4825fbc7e70c422297510f6059dadc21">&#9670;&nbsp;</a></span>readBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a>&gt; transporter::adapters::sfml::TransporterAdapterSfmlTcpSocket::readBytes </td>
+          <td class="memname">virtual transporter::data::BufferPtr transporter::adapters::sfml::TransporterAdapterSfmlTcpSocket::readBytes </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>count</em></td><td>)</td>
@@ -153,7 +153,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a> containing the read bytes </dd></dl>
 
-<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b">transporter::data::io::IByteInput</a>.</p>
+<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc">transporter::data::io::IByteInput</a>.</p>
 
 </div>
 </div>

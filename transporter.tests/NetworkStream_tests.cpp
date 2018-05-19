@@ -27,7 +27,7 @@ TEST_CASE("READs/WRITEs")
 	const char *bufferStr = "Hello, Buffer!";
 	std::size_t bufferStrLen = std::strlen(bufferStr);
 	transporter::data::Buffer buffer{ bufferStr, bufferStrLen };
-	std::unique_ptr<transporter::data::Buffer> readBuffer{};
+	transporter::data::BufferPtr readBuffer{};
 
 	REQUIRE(ns.writeBytes(buffer) == buffer.getSize());
 	REQUIRE(ms.getPosition() == buffer.getSize());

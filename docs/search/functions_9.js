@@ -5,7 +5,7 @@ var searchData=
   ['setposition',['setPosition',['../classtransporter_1_1data_1_1io_1_1_memory_stream.html#a36b8abccc294c920e6aed9906eb36e1f',1,'transporter::data::io::MemoryStream']]],
   ['shrinkbeginning',['shrinkBeginning',['../classtransporter_1_1data_1_1_buffer.html#aa878e79168b178df8a37e7909ab7bc9b',1,'transporter::data::Buffer']]],
   ['shrinkend',['shrinkEnd',['../classtransporter_1_1data_1_1_buffer.html#a5defd7cc27fc54d01a156c3c3c6c9079',1,'transporter::data::Buffer']]],
-  ['slice',['slice',['../classtransporter_1_1data_1_1_buffer.html#a5a0e3dc4fe89bc0b0fa00edd875f30a7',1,'transporter::data::Buffer']]],
+  ['slice',['slice',['../classtransporter_1_1data_1_1_buffer.html#a895ab7549bbfcc1324b5dd13ae5cbdd6',1,'transporter::data::Buffer']]],
   ['startreadtransaction',['startReadTransaction',['../classtransporter_1_1network_1_1io_1_1_network_stream.html#a35d9e9bbbfb0b9f76b6cd94c25eefea4',1,'transporter::network::io::NetworkStream']]],
   ['startwritetransaction',['startWriteTransaction',['../classtransporter_1_1network_1_1io_1_1_network_stream.html#aa14d3033d3a6eb9e4d9b1e8e21ffa72b',1,'transporter::network::io::NetworkStream']]]
 ];

@@ -52,7 +52,7 @@ transporter::network::messages::NetworkMessagePtr transporter::network::io::Netw
 	{
 		transporter::network::messages::NetworkMessageId msgId = this->readInt32();
 		std::uint32_t msgDataSize = this->readUInt32();
-		std::unique_ptr<transporter::network::messages::INetworkMessage> msg = selector(msgId);
+		transporter::network::messages::NetworkMessagePtr msg = selector(msgId);
 
 		if (msg == nullptr)
 		{
@@ -166,13 +166,13 @@ bool transporter::network::io::NetworkStream::rollbackWriteTransaction() noexcep
 }
 
 
-std::unique_ptr<transporter::data::Buffer> transporter::network::io::NetworkStream::readBytes(std::size_t count) noexcept
+transporter::data::BufferPtr transporter::network::io::NetworkStream::readBytes(std::size_t count) noexcept
 {
-	std::unique_ptr<data::Buffer> buffer{};
+	transporter::data::BufferPtr buffer{};
 
 	if (count > m_readBuffer.getSize())
 	{
-		std::unique_ptr<data::Buffer> buffer = m_stream.readBytes(count > READ_BLOCK_SIZE ? count : READ_BLOCK_SIZE);
+		transporter::data::BufferPtr buffer = m_stream.readBytes(count > READ_BLOCK_SIZE ? count : READ_BLOCK_SIZE);
 
 		if (buffer)
 		{
@@ -312,7 +312,7 @@ std::string transporter::network::io::NetworkStream::readString() noexcept
 
 	if (length > 0)
 	{
-		std::unique_ptr<data::Buffer> buffer = this->readBytes(length);
+		transporter::data::BufferPtr buffer = this->readBytes(length);
 
 		if (buffer && buffer->getSize() == length)
 		{

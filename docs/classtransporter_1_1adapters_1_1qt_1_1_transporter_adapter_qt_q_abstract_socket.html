@@ -31,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Transporter Library
    </div>
-   <div id="projectbrief">C++ library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
+   <div id="projectbrief">Cross-platform, modern C++ 11 library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
   </td>
  </tr>
  </tbody>
@@ -106,9 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6235131b0457e91b49b42b3f7266fe43"><td class="memItemLeft" align="right" valign="top"><a id="a6235131b0457e91b49b42b3f7266fe43"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TransporterAdapterQtQAbstractSocket</b> (QAbstractSocket &amp;socket)</td></tr>
 <tr class="separator:a6235131b0457e91b49b42b3f7266fe43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1537040375bfa68a16317c9b71ea5435"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1qt_1_1_transporter_adapter_qt_q_abstract_socket.html#a1537040375bfa68a16317c9b71ea5435">readBytes</a> (std::size_t count) noexcept override</td></tr>
-<tr class="memdesc:a1537040375bfa68a16317c9b71ea5435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#a1537040375bfa68a16317c9b71ea5435">More...</a><br /></td></tr>
-<tr class="separator:a1537040375bfa68a16317c9b71ea5435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adceaaf2697cbee61534f0458d60f4598"><td class="memItemLeft" align="right" valign="top">virtual transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1qt_1_1_transporter_adapter_qt_q_abstract_socket.html#adceaaf2697cbee61534f0458d60f4598">readBytes</a> (std::size_t count) noexcept override</td></tr>
+<tr class="memdesc:adceaaf2697cbee61534f0458d60f4598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#adceaaf2697cbee61534f0458d60f4598">More...</a><br /></td></tr>
+<tr class="separator:adceaaf2697cbee61534f0458d60f4598"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af51f0835dea658a11e99a27506456b07"><td class="memItemLeft" align="right" valign="top">virtual ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1qt_1_1_transporter_adapter_qt_q_abstract_socket.html#af51f0835dea658a11e99a27506456b07">writeBytes</a> (const <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &amp;buffer) noexcept override</td></tr>
 <tr class="memdesc:af51f0835dea658a11e99a27506456b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to write the bytes in <code>buffer</code> to the underlying output and return the number of bytes written.  <a href="#af51f0835dea658a11e99a27506456b07">More...</a><br /></td></tr>
 <tr class="separator:af51f0835dea658a11e99a27506456b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,8 +117,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Adapter class for Qt's sockets (QTcpSocket and QUdpSocket) </p>
 <p>For UDP sockets (QUdpSocket), the socket must be "connected" using QUdpSocket::connectToHost() </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1537040375bfa68a16317c9b71ea5435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1537040375bfa68a16317c9b71ea5435">&#9670;&nbsp;</a></span>readBytes()</h2>
+<a id="adceaaf2697cbee61534f0458d60f4598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adceaaf2697cbee61534f0458d60f4598">&#9670;&nbsp;</a></span>readBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a>&gt; transporter::adapters::qt::TransporterAdapterQtQAbstractSocket::readBytes </td>
+          <td class="memname">virtual transporter::data::BufferPtr transporter::adapters::qt::TransporterAdapterQtQAbstractSocket::readBytes </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>count</em></td><td>)</td>
@@ -154,7 +154,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a> containing the read bytes </dd></dl>
 
-<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b">transporter::data::io::IByteInput</a>.</p>
+<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc">transporter::data::io::IByteInput</a>.</p>
 
 </div>
 </div>

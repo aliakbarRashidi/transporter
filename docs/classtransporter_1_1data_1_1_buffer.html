@@ -31,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Transporter Library
    </div>
-   <div id="projectbrief">C++ library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
+   <div id="projectbrief">Cross-platform, modern C++ 11 library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
   </td>
  </tr>
  </tbody>
@@ -155,9 +155,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad34d683657d8044eb789358961b17b8f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1_buffer.html#ad34d683657d8044eb789358961b17b8f">getSize</a> () const noexcept</td></tr>
 <tr class="memdesc:ad34d683657d8044eb789358961b17b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of this buffer.  <a href="#ad34d683657d8044eb789358961b17b8f">More...</a><br /></td></tr>
 <tr class="separator:ad34d683657d8044eb789358961b17b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3b7934005062d22e31992655ba8fc4e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1_buffer.html#ac3b7934005062d22e31992655ba8fc4e">getSlice</a> (std::size_t beginning, std::size_t length) const  throw (std::bad_alloc, std::invalid_argument)</td></tr>
-<tr class="memdesc:ac3b7934005062d22e31992655ba8fc4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a slice of this buffer of length <code>length</code> starting at index <code>beginning</code>.  <a href="#ac3b7934005062d22e31992655ba8fc4e">More...</a><br /></td></tr>
-<tr class="separator:ac3b7934005062d22e31992655ba8fc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e523d577193a1cff61e0dceb20dcffd"><td class="memItemLeft" align="right" valign="top">transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1_buffer.html#a6e523d577193a1cff61e0dceb20dcffd">getSlice</a> (std::size_t beginning, std::size_t length) const  throw (std::bad_alloc, std::invalid_argument)</td></tr>
+<tr class="memdesc:a6e523d577193a1cff61e0dceb20dcffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a slice of this buffer of length <code>length</code> starting at index <code>beginning</code>.  <a href="#a6e523d577193a1cff61e0dceb20dcffd">More...</a><br /></td></tr>
+<tr class="separator:a6e523d577193a1cff61e0dceb20dcffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9477c491071c02f135b1dbeab91a592e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1_buffer.html#a9477c491071c02f135b1dbeab91a592e">release</a> () noexcept</td></tr>
 <tr class="memdesc:a9477c491071c02f135b1dbeab91a592e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the internal buffer pointer and return it.  <a href="#a9477c491071c02f135b1dbeab91a592e">More...</a><br /></td></tr>
 <tr class="separator:a9477c491071c02f135b1dbeab91a592e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,9 +181,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1_buffer.html#ad4c1e4ebae37c2b4f5568ae1216aa65a">reverse</a> () const noexcept</td></tr>
 <tr class="memdesc:ad4c1e4ebae37c2b4f5568ae1216aa65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse this buffer. <br /></td></tr>
 <tr class="separator:ad4c1e4ebae37c2b4f5568ae1216aa65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a0e3dc4fe89bc0b0fa00edd875f30a7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1_buffer.html#a5a0e3dc4fe89bc0b0fa00edd875f30a7">slice</a> (std::size_t beginning, std::size_t length)  throw (std::bad_alloc, std::invalid_argument)</td></tr>
-<tr class="memdesc:a5a0e3dc4fe89bc0b0fa00edd875f30a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slice this buffer by length <code>length</code> starting at index <code>beginning</code> and return a pointer to the newly-constructed slice.  <a href="#a5a0e3dc4fe89bc0b0fa00edd875f30a7">More...</a><br /></td></tr>
-<tr class="separator:a5a0e3dc4fe89bc0b0fa00edd875f30a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895ab7549bbfcc1324b5dd13ae5cbdd6"><td class="memItemLeft" align="right" valign="top">transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1data_1_1_buffer.html#a895ab7549bbfcc1324b5dd13ae5cbdd6">slice</a> (std::size_t beginning, std::size_t length)  throw (std::bad_alloc, std::invalid_argument)</td></tr>
+<tr class="memdesc:a895ab7549bbfcc1324b5dd13ae5cbdd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slice this buffer by length <code>length</code> starting at index <code>beginning</code> and return a pointer to the newly-constructed slice.  <a href="#a895ab7549bbfcc1324b5dd13ae5cbdd6">More...</a><br /></td></tr>
+<tr class="separator:a895ab7549bbfcc1324b5dd13ae5cbdd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provide high-level operations on an array of bytes. </p>
@@ -272,14 +272,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a id="ac3b7934005062d22e31992655ba8fc4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3b7934005062d22e31992655ba8fc4e">&#9670;&nbsp;</a></span>getSlice()</h2>
+<a id="a6e523d577193a1cff61e0dceb20dcffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e523d577193a1cff61e0dceb20dcffd">&#9670;&nbsp;</a></span>getSlice()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt; transporter::data::Buffer::getSlice </td>
+          <td class="memname">transporter::data::BufferPtr transporter::data::Buffer::getSlice </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>beginning</em>, </td>
@@ -542,14 +542,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a id="a5a0e3dc4fe89bc0b0fa00edd875f30a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a0e3dc4fe89bc0b0fa00edd875f30a7">&#9670;&nbsp;</a></span>slice()</h2>
+<a id="a895ab7549bbfcc1324b5dd13ae5cbdd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895ab7549bbfcc1324b5dd13ae5cbdd6">&#9670;&nbsp;</a></span>slice()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt; transporter::data::Buffer::slice </td>
+          <td class="memname">transporter::data::BufferPtr transporter::data::Buffer::slice </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>beginning</em>, </td>

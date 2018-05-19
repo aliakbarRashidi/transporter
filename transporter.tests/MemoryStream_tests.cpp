@@ -43,8 +43,8 @@ TEST_CASE("Reading")
 {
 	transporter::data::io::MemoryStream ms{};
 	transporter::data::Buffer buffer{ 100 };
-	std::unique_ptr<transporter::data::Buffer> readBuffer1{};
-	std::unique_ptr<transporter::data::Buffer> readBuffer2{};
+	transporter::data::BufferPtr readBuffer1{};
+	transporter::data::BufferPtr readBuffer2{};
 
 	fillBuffer(buffer);
 

@@ -9,13 +9,13 @@ m_position{ 0 }
 }
 
 
-std::unique_ptr<transporter::data::Buffer> transporter::data::io::MemoryStream::readBytes(std::size_t count) noexcept
+transporter::data::BufferPtr transporter::data::io::MemoryStream::readBytes(std::size_t count) noexcept
 {
 	count = count <= m_buffer.getSize() ? count : m_buffer.getSize();
 
 	try
 	{
-		std::unique_ptr<Buffer> slice = m_buffer.getSlice(m_position, count);
+		transporter::data::BufferPtr slice = m_buffer.getSlice(m_position, count);
 
 		m_position += count;
 

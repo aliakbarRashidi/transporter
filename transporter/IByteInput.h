@@ -33,7 +33,7 @@ namespace transporter
 				*
 				* @return Pointer to newly-constructed transporter::data::Buffer containing the read bytes
 				*/
-				virtual std::unique_ptr<transporter::data::Buffer> readBytes(std::size_t count) noexcept = 0;
+				virtual transporter::data::BufferPtr readBytes(std::size_t count) noexcept = 0;
 			};
 		}
 	}

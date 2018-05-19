@@ -15,8 +15,11 @@ namespace transporter
 	{
 		namespace messages
 		{
+			class INetworkMessage;
+
 			typedef std::int32_t NetworkMessageId;
-			
+			typedef std::unique_ptr<transporter::network::messages::INetworkMessage> NetworkMessagePtr;
+
 			/**
 			* @brief Interface class for all network messages
 			*/
@@ -43,8 +46,6 @@ namespace transporter
 				*/
 				virtual void deserialize(transporter::data::io::IDataInput &input) noexcept = 0;
 			};
-
-			typedef std::unique_ptr<transporter::network::messages::INetworkMessage> NetworkMessagePtr;
 		}
 	}
 }

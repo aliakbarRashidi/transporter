@@ -298,8 +298,8 @@ TEST_CASE("Slicing buffer")
 {
 	transporter::data::Buffer buffer{ 100 };
 	transporter::data::Buffer bufferCopy{};
-	std::unique_ptr<transporter::data::Buffer> bufferSlice1{};
-	std::unique_ptr<transporter::data::Buffer> bufferSlice2{};
+	transporter::data::BufferPtr bufferSlice1{};
+	transporter::data::BufferPtr bufferSlice2{};
 
 	fillBuffer(buffer);
 	bufferCopy = buffer;

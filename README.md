@@ -1,6 +1,6 @@
 # transporter
 
-_transporter_ is a cross-platform C++ library facilitating the development of network applications by providing an implementation of **network streams** and **network messages**.
+_transporter_ is a cross-platform, modern C++11 library facilitating the development of network applications by providing an implementation of **network streams** and **network messages**.
 
 * **Network streams** add an **abstraction layer** _on top_ of your ordinary network library that takes care of the processing of the data you send and receive
 * **Network messages** act as a **wrapper** around your data so you can manipulate them easily
@@ -46,7 +46,7 @@ Otherwise, if your library isn't listed above, you can easily write one in less 
 
 The core of transporter is the [NetworkStream class](https://guitek.github.io/transporter/classtransporter_1_1network_1_1io_1_1_network_stream.html) which can send and receive [network messages](https://guitek.github.io/transporter/classtransporter_1_1network_1_1messages_1_1_i_network_message.html).
 
-All `NetworkStream` needs is an [IByteStream](https://guitek.github.io/transporter/classtransporter_1_1data_1_1io_1_1_i_byte_stream.html) to be able to write and read the messages. All you have to do is to create a class inheriting from the `IByteStream` interface and implement the methods [IByteStream::readBytes()](https://guitek.github.io/transporter/classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b) and [IByteStream::writeBytes()](https://guitek.github.io/transporter/classtransporter_1_1data_1_1io_1_1_i_byte_output.html).
+All `NetworkStream` needs is an [IByteStream](https://guitek.github.io/transporter/classtransporter_1_1data_1_1io_1_1_i_byte_stream.html) to be able to write and read the messages. All you have to do is to create a class inheriting from the `IByteStream` interface and implement the methods [IByteStream::readBytes()](https://guitek.github.io/transporter/classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc) and [IByteStream::writeBytes()](https://guitek.github.io/transporter/classtransporter_1_1data_1_1io_1_1_i_byte_output.html#a3f2a5a3a2cee96610c1b257d2f71ce14).
 
 You can have a look at the [Boost.Asio TCP adapter implementation](https://github.com/GuiTeK/transporter/blob/master/transporter/TransporterAdapterBoostAsioTcpSocket.h) to see how straightforward it is. You can copy/paste it as a base for your own adapter and modify it as needed.
 

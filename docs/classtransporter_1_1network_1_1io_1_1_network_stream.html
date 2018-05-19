@@ -31,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Transporter Library
    </div>
-   <div id="projectbrief">C++ library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
+   <div id="projectbrief">Cross-platform, modern C++ 11 library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
   </td>
  </tr>
  </tbody>
@@ -131,9 +131,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a494c9fdd8804794e60d3dc2693805728"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a494c9fdd8804794e60d3dc2693805728">rollbackWriteTransaction</a> () noexcept</td></tr>
 <tr class="memdesc:a494c9fdd8804794e60d3dc2693805728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rollback a write transaction.  <a href="#a494c9fdd8804794e60d3dc2693805728">More...</a><br /></td></tr>
 <tr class="separator:a494c9fdd8804794e60d3dc2693805728"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc72d33205b173fd35b5da63d31d67ab"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#adc72d33205b173fd35b5da63d31d67ab">readBytes</a> (std::size_t count) noexcept override</td></tr>
-<tr class="memdesc:adc72d33205b173fd35b5da63d31d67ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#adc72d33205b173fd35b5da63d31d67ab">More...</a><br /></td></tr>
-<tr class="separator:adc72d33205b173fd35b5da63d31d67ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b4740e29e5836d3658eed926f782d48"><td class="memItemLeft" align="right" valign="top">virtual transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a5b4740e29e5836d3658eed926f782d48">readBytes</a> (std::size_t count) noexcept override</td></tr>
+<tr class="memdesc:a5b4740e29e5836d3658eed926f782d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#a5b4740e29e5836d3658eed926f782d48">More...</a><br /></td></tr>
+<tr class="separator:a5b4740e29e5836d3658eed926f782d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97191a8f9bbf92e112f47cb7ee7ef25f"><td class="memItemLeft" align="right" valign="top">virtual ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a97191a8f9bbf92e112f47cb7ee7ef25f">writeBytes</a> (const <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &amp;buffer) noexcept override</td></tr>
 <tr class="memdesc:a97191a8f9bbf92e112f47cb7ee7ef25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to write the bytes in <code>buffer</code> to the underlying output and return the number of bytes written.  <a href="#a97191a8f9bbf92e112f47cb7ee7ef25f">More...</a><br /></td></tr>
 <tr class="separator:a97191a8f9bbf92e112f47cb7ee7ef25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -321,8 +321,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="adc72d33205b173fd35b5da63d31d67ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc72d33205b173fd35b5da63d31d67ab">&#9670;&nbsp;</a></span>readBytes()</h2>
+<a id="a5b4740e29e5836d3658eed926f782d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b4740e29e5836d3658eed926f782d48">&#9670;&nbsp;</a></span>readBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +331,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt; transporter::network::io::NetworkStream::readBytes </td>
+          <td class="memname">transporter::data::BufferPtr transporter::network::io::NetworkStream::readBytes </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>count</em></td><td>)</td>
@@ -358,7 +358,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a> containing the read bytes </dd></dl>
 
-<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b">transporter::data::io::IByteInput</a>.</p>
+<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc">transporter::data::io::IByteInput</a>.</p>
 
 </div>
 </div>

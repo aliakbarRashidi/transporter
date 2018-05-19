@@ -31,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Transporter Library
    </div>
-   <div id="projectbrief">C++ library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
+   <div id="projectbrief">Cross-platform, modern C++ 11 library facilitating the development of network applications by providing an implementation of network streams and network messages.</div>
   </td>
  </tr>
  </tbody>
@@ -106,9 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2fb0dc829b9bfc859700e9b61075939"><td class="memItemLeft" align="right" valign="top"><a id="af2fb0dc829b9bfc859700e9b61075939"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TransporterAdapterBoostAsioUdpSocket</b> (::boost::asio::ip::udp::socket &amp;socket)</td></tr>
 <tr class="separator:af2fb0dc829b9bfc859700e9b61075939"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae52f71124745ac4494e9f097d74fe066"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1boost_1_1asio_1_1_transporter_adapter_boost_asio_udp_socket.html#ae52f71124745ac4494e9f097d74fe066">readBytes</a> (std::size_t count) noexcept override</td></tr>
-<tr class="memdesc:ae52f71124745ac4494e9f097d74fe066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#ae52f71124745ac4494e9f097d74fe066">More...</a><br /></td></tr>
-<tr class="separator:ae52f71124745ac4494e9f097d74fe066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad482fde665ad4af177cf62739b1c68d4"><td class="memItemLeft" align="right" valign="top">virtual transporter::data::BufferPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1boost_1_1asio_1_1_transporter_adapter_boost_asio_udp_socket.html#ad482fde665ad4af177cf62739b1c68d4">readBytes</a> (std::size_t count) noexcept override</td></tr>
+<tr class="memdesc:ad482fde665ad4af177cf62739b1c68d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read <code>count</code> bytes from the underlying input and return them in a pointer to a newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a>.  <a href="#ad482fde665ad4af177cf62739b1c68d4">More...</a><br /></td></tr>
+<tr class="separator:ad482fde665ad4af177cf62739b1c68d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea18ae409566116d9e91ac1b9cd40a63"><td class="memItemLeft" align="right" valign="top">virtual ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1adapters_1_1boost_1_1asio_1_1_transporter_adapter_boost_asio_udp_socket.html#aea18ae409566116d9e91ac1b9cd40a63">writeBytes</a> (const <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &amp;buffer) noexcept override</td></tr>
 <tr class="memdesc:aea18ae409566116d9e91ac1b9cd40a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to write the bytes in <code>buffer</code> to the underlying output and return the number of bytes written.  <a href="#aea18ae409566116d9e91ac1b9cd40a63">More...</a><br /></td></tr>
 <tr class="separator:aea18ae409566116d9e91ac1b9cd40a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,8 +117,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Adapter class for Boost.Asio's UDP sockets (boost::asio::ip::udp::socket) </p>
 <p>The socket must be "connected" using boost::asio::ip::udp::connect() </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae52f71124745ac4494e9f097d74fe066"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae52f71124745ac4494e9f097d74fe066">&#9670;&nbsp;</a></span>readBytes()</h2>
+<a id="ad482fde665ad4af177cf62739b1c68d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad482fde665ad4af177cf62739b1c68d4">&#9670;&nbsp;</a></span>readBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a>&gt; transporter::adapters::boost::asio::TransporterAdapterBoostAsioUdpSocket::readBytes </td>
+          <td class="memname">virtual transporter::data::BufferPtr transporter::adapters::boost::asio::TransporterAdapterBoostAsioUdpSocket::readBytes </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>count</em></td><td>)</td>
@@ -154,7 +154,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to newly-constructed <a class="el" href="classtransporter_1_1data_1_1_buffer.html" title="Provide high-level operations on an array of bytes. ">transporter::data::Buffer</a> containing the read bytes </dd></dl>
 
-<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#ada05899e64924c847b92a5bf61d3ff5b">transporter::data::io::IByteInput</a>.</p>
+<p>Implements <a class="el" href="classtransporter_1_1data_1_1io_1_1_i_byte_input.html#a1eedf2ac2bb60a019fce02438a36c0fc">transporter::data::io::IByteInput</a>.</p>
 
 </div>
 </div>
