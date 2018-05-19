@@ -20,7 +20,7 @@ namespace transporter
 			class TRANSPORTER_DLL TransporterAdapterQtQAbstractSocket : public transporter::data::io::IByteStream
 			{
 			public:
-				TransporterAdapterQtQAbstractSocket(QAbstractSocket *socket) : IByteStream{},
+				TransporterAdapterQtQAbstractSocket(QAbstractSocket &socket) : IByteStream{},
 					m_socket{ socket }
 				{
 				}
@@ -31,7 +31,7 @@ namespace transporter
 					try
 					{
 						transporter::data::BufferPtr buffer = transporter::data::BufferPtr{ new transporter::data::Buffer{ count } };
-						qint64 readNb = m_socket->read(buffer->getRawBuffer(), count);
+						qint64 readNb = m_socket.read(buffer->getRawBuffer(), count);
 
 						if (readNb < 0)
 						{
@@ -54,12 +54,12 @@ namespace transporter
 
 				virtual ssize_t writeBytes(const transporter::data::Buffer &buffer) noexcept override
 				{
-					return m_socket->write(buffer.getRawBuffer(), buffer.getSize());
+					return m_socket.write(buffer.getRawBuffer(), buffer.getSize());
 				}
 
 
 			private:
-				QAbstractSocket *m_socket;
+				QAbstractSocket &m_socket;
 			};
 		}
 	}

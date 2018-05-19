@@ -1,6 +1,6 @@
 # transporter
 
-_transporter_ is a C++ library facilitating the development of network applications by providing an implementation of **network streams** and **network messages**.
+_transporter_ is a cross-platform C++ library facilitating the development of network applications by providing an implementation of **network streams** and **network messages**.
 
 * **Network streams** add an **abstraction layer** _on top_ of your ordinary network library that takes care of the processing of the data you send and receive
 * **Network messages** act as a **wrapper** around your data so you can manipulate them easily
