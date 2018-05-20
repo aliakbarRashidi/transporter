@@ -1,5 +1,7 @@
 # transporter
 
+![Build Status](https://jenkins.guillaume.tech/buildStatus/icon?job=transporter-pipeline)
+
 _transporter_ is a cross-platform, modern C++11 library facilitating the development of network applications by providing an implementation of **network streams** and **network messages**.
 
 * **Network streams** add an **abstraction layer** _on top_ of your ordinary network library that takes care of the processing of the data you send and receive
