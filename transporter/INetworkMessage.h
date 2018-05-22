@@ -49,6 +49,9 @@ namespace transporter
 			class TRANSPORTER_DLL INetworkMessage
 			{
 			public:
+				INetworkMessage() noexcept = default;
+				INetworkMessage(const INetworkMessage&) = delete;
+				INetworkMessage(INetworkMessage&&) = delete;
 				virtual ~INetworkMessage() = default;
 
 				/**

@@ -43,6 +43,8 @@ namespace transporter
 			{
 			public:
 				IByteInput() noexcept = default;
+				IByteInput(const IByteInput&) = delete;
+				IByteInput(IByteInput&&) = delete;
 				virtual ~IByteInput() noexcept = default;
 
 				/**

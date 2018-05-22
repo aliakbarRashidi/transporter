@@ -41,6 +41,8 @@ namespace transporter
 			{
 			public:
 				IByteOutput() noexcept = default;
+				IByteOutput(const IByteOutput&) = delete;
+				IByteOutput(IByteOutput&&) = delete;
 				virtual ~IByteOutput() noexcept = default;
 
 				/**
