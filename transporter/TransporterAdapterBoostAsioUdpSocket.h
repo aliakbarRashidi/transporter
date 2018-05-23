@@ -43,7 +43,7 @@ namespace transporter
 				*
 				* @details The socket must be "connected" using boost::asio::ip::udp::connect()
 				*/
-				class TRANSPORTER_DLL TransporterAdapterBoostAsioUdpSocket : public transporter::data::io::IByteStream
+				class TransporterAdapterBoostAsioUdpSocket : public transporter::data::io::IByteStream
 				{
 				public:
 					TransporterAdapterBoostAsioUdpSocket(::boost::asio::ip::udp::socket &socket) : IByteStream{},

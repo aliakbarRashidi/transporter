@@ -40,7 +40,7 @@ namespace transporter
 			*
 			* @details For UDP sockets (QUdpSocket), the socket must be "connected" using QUdpSocket::connectToHost()
 			*/
-			class TRANSPORTER_DLL TransporterAdapterQtQAbstractSocket : public transporter::data::io::IByteStream
+			class TransporterAdapterQtQAbstractSocket : public transporter::data::io::IByteStream
 			{
 			public:
 				TransporterAdapterQtQAbstractSocket(QAbstractSocket &socket) : IByteStream{},

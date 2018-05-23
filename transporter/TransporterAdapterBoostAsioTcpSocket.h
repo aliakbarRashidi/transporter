@@ -41,7 +41,7 @@ namespace transporter
 				/**
 				* @brief Adapter class for Boost.Asio's TCP sockets (boost::asio::ip::tcp::socket)
 				*/
-				class TRANSPORTER_DLL TransporterAdapterBoostAsioTcpSocket : public transporter::data::io::IByteStream
+				class TransporterAdapterBoostAsioTcpSocket : public transporter::data::io::IByteStream
 				{
 				public:
 					TransporterAdapterBoostAsioTcpSocket(::boost::asio::ip::tcp::socket &socket) : IByteStream{},

@@ -38,7 +38,7 @@ namespace transporter
 			/**
 			* @brief Adapter class for SFML's TCP sockets (sf::TcpSocket)
 			*/
-			class TRANSPORTER_DLL TransporterAdapterSfmlTcpSocket : public transporter::data::io::IByteStream
+			class TransporterAdapterSfmlTcpSocket : public transporter::data::io::IByteStream
 			{
 			public:
 				TransporterAdapterSfmlTcpSocket(sf::TcpSocket &socket) : IByteStream{},

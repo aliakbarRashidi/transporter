@@ -40,7 +40,7 @@ namespace transporter
 			*
 			* @details As sf::UdpSocket provides no way to bind a socket to a remote endpoint, the receiver of the future messages must be passed in the constructor
 			*/
-			class TRANSPORTER_DLL TransporterAdapterSfmlUdpSocket : public transporter::data::io::IByteStream
+			class TransporterAdapterSfmlUdpSocket : public transporter::data::io::IByteStream
 			{
 			public:
 				/**
