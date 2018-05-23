@@ -55,6 +55,8 @@ You can have a look at the [Boost.Asio TCP adapter implementation](https://githu
 
 ## Quick start: sending and receiving messages
 
+One complete and fully-commented example is available in the [examples/ folder](https://github.com/GuiTeK/transporter/tree/master/examples) of the repository. It features a client sending a test message to a local server using Boost.Asio TCP sockets.
+
 ### Creating network messages
 
 Before you can send or receive any message, you must create it. A network message is a class:
