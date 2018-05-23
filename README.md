@@ -102,3 +102,16 @@ As stated above, transporter doesn't implement sockets. To use it, you need a ne
 * [SFML](https://www.sfml-dev.org/)'s network module
 
 **You can use _any_ network library**: you just need to write an adapter for it if it doesn't exist yet.
+
+
+## Contributing
+
+You can contribute to the project by:
+* Writing new [adapters](#interfacing-transporter-with-network-libraries) for transporter
+* Creating an [issue](https://github.com/GuiTeK/transporter/issues) to signal a bug or to suggest a feature
+* Fixing bugs (see [Creating a pull request - GitHub](https://help.github.com/articles/creating-a-pull-request/))
+* Writing documentation
+
+Make sure you read [CONTRIBUTING.md](https://github.com/GuiTeK/transporter/blob/master/CONTRIBUTING.md) before writing code.
+
+Any contribution is very much appreciated!
