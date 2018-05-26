@@ -109,7 +109,7 @@ As stated above, transporter doesn't implement sockets. To use it, you need a ne
 You can contribute to the project by:
 * Writing new [adapters](#interfacing-transporter-with-network-libraries) for transporter
 * Creating an [issue](https://github.com/GuiTeK/transporter/issues) to signal a bug or to suggest a feature
-* Fixing bugs (see [Creating a pull request - GitHub](https://help.github.com/articles/creating-a-pull-request/))
+* Fixing bugs or implementing new features (see [Creating a pull request - GitHub](https://help.github.com/articles/creating-a-pull-request/))
 * Writing documentation
 
 Make sure you read [CONTRIBUTING.md](https://github.com/GuiTeK/transporter/blob/master/CONTRIBUTING.md) before writing code.
