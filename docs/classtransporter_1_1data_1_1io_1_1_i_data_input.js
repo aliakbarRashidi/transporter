@@ -2,6 +2,7 @@ var classtransporter_1_1data_1_1io_1_1_i_data_input =
 [
     [ "IDataInput", "classtransporter_1_1data_1_1io_1_1_i_data_input.html#a6f2bf4198c3a9f447f83013d2ddf5e84", null ],
     [ "~IDataInput", "classtransporter_1_1data_1_1io_1_1_i_data_input.html#a767cf80cbbd5d3c0e985aa3de4c7a74d", null ],
+    [ "readBoolean", "classtransporter_1_1data_1_1io_1_1_i_data_input.html#aff5acc78ba443e8ffac2901a5b584a7b", null ],
     [ "readDouble", "classtransporter_1_1data_1_1io_1_1_i_data_input.html#a16a538567b80a993caa9fdbb0c6500e0", null ],
     [ "readFloat", "classtransporter_1_1data_1_1io_1_1_i_data_input.html#a9157e3a9948c13a538173b9b80896e74", null ],
     [ "readInt16", "classtransporter_1_1data_1_1io_1_1_i_data_input.html#a0b25fb7ef4f6619879ec0e18772059cf", null ],

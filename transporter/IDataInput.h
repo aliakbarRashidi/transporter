@@ -49,6 +49,11 @@ namespace transporter
 
 
 				/**
+				* @brief Read a boolean value from the underlying input
+				*/
+				virtual bool readBoolean() noexcept = 0;
+
+				/**
 				* @brief Read a signed 1-byte integer number from the underlying input
 				*/
 				virtual std::int8_t readInt8() noexcept = 0;

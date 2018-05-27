@@ -125,6 +125,7 @@ namespace transporter
 				virtual transporter::data::BufferPtr readBytes(std::size_t count) noexcept override;
 				virtual ssize_t writeBytes(const transporter::data::Buffer &buffer) noexcept override;
 
+				virtual bool readBoolean() noexcept override;
 				virtual std::int8_t readInt8() noexcept override;
 				virtual std::int16_t readInt16() noexcept override;
 				virtual std::int32_t readInt32() noexcept override;
@@ -137,6 +138,7 @@ namespace transporter
 				virtual double readDouble() noexcept override;
 				virtual std::string readString() noexcept override;
 
+				virtual void writeBoolean(bool value) noexcept override;
 				virtual void writeInt8(std::int8_t value) noexcept override;
 				virtual void writeInt16(std::int16_t value) noexcept override;
 				virtual void writeInt32(std::int32_t value) noexcept override;

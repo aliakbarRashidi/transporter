@@ -69,6 +69,8 @@ TEST_CASE("READs/WRITEs")
 	ns.writeUInt32(std::numeric_limits<std::uint32_t>::min());
 	ns.writeUInt64(std::numeric_limits<std::uint64_t>::min());
 
+	ns.writeBoolean(true);
+	ns.writeBoolean(false);
 	ns.writeFloat(5.00f);
 	ns.writeDouble(6.00);
 	ns.writeString("Hello, World!");
@@ -113,6 +115,8 @@ TEST_CASE("READs/WRITEs")
 	REQUIRE(ns.readUInt32() == std::numeric_limits<std::uint32_t>::min());
 	REQUIRE(ns.readUInt64() == std::numeric_limits<std::uint64_t>::min());
 	
+	REQUIRE(ns.readBoolean() == true);
+	REQUIRE(ns.readBoolean() == false);
 	REQUIRE(ns.readFloat() == 5.00f);
 	REQUIRE(ns.readDouble() == 6.00);
 	REQUIRE(ns.readString() == std::string("Hello, World!"));

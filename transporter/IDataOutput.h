@@ -49,6 +49,11 @@ namespace transporter
 
 
 				/**
+				* @brief Write a boolean value to the underlying output
+				*/
+				virtual void writeBoolean(bool value) = 0;
+
+				/**
 				* @brief Write a signed 1-byte integer number to the underlying output
 				*/
 				virtual void writeInt8(std::int8_t value) = 0;

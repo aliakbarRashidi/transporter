@@ -279,6 +279,11 @@ ssize_t transporter::network::io::NetworkStream::writeBytes(const transporter::d
 }
 
 
+bool transporter::network::io::NetworkStream::readBoolean() noexcept
+{
+	return this->readData<bool>();
+}
+
 std::int8_t transporter::network::io::NetworkStream::readInt8() noexcept
 {
 	return this->readInt<std::int8_t>();
@@ -346,6 +351,11 @@ std::string transporter::network::io::NetworkStream::readString() noexcept
 	return std::string{};
 }
 
+
+void transporter::network::io::NetworkStream::writeBoolean(bool value) noexcept
+{
+	this->writeData<bool>(value);
+}
 
 void transporter::network::io::NetworkStream::writeInt8(std::int8_t value) noexcept
 {

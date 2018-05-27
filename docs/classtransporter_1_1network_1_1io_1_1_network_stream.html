@@ -137,6 +137,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a97191a8f9bbf92e112f47cb7ee7ef25f"><td class="memItemLeft" align="right" valign="top">virtual ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a97191a8f9bbf92e112f47cb7ee7ef25f">writeBytes</a> (const <a class="el" href="classtransporter_1_1data_1_1_buffer.html">transporter::data::Buffer</a> &amp;buffer) noexcept override</td></tr>
 <tr class="memdesc:a97191a8f9bbf92e112f47cb7ee7ef25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to write the bytes in <code>buffer</code> to the underlying output and return the number of bytes written.  <a href="#a97191a8f9bbf92e112f47cb7ee7ef25f">More...</a><br /></td></tr>
 <tr class="separator:a97191a8f9bbf92e112f47cb7ee7ef25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a4b3953704b5e2f69878082a9d06ec8"><td class="memItemLeft" align="right" valign="top"><a id="a0a4b3953704b5e2f69878082a9d06ec8"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a0a4b3953704b5e2f69878082a9d06ec8">readBoolean</a> () noexcept override</td></tr>
+<tr class="memdesc:a0a4b3953704b5e2f69878082a9d06ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a boolean value from the underlying input. <br /></td></tr>
+<tr class="separator:a0a4b3953704b5e2f69878082a9d06ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2344a817ac96a7df0c60198360e0a18a"><td class="memItemLeft" align="right" valign="top"><a id="a2344a817ac96a7df0c60198360e0a18a"></a>
 virtual std::int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a2344a817ac96a7df0c60198360e0a18a">readInt8</a> () noexcept override</td></tr>
 <tr class="memdesc:a2344a817ac96a7df0c60198360e0a18a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a signed 1-byte integer number from the underlying input. <br /></td></tr>
@@ -181,6 +185,10 @@ virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#afc9e99acf776c27941f53adb5d5e8766">readString</a> () noexcept override</td></tr>
 <tr class="memdesc:afc9e99acf776c27941f53adb5d5e8766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a string of characters prefixed with its size (as an unsigned 4-byte integer number) from the underlying input. <br /></td></tr>
 <tr class="separator:afc9e99acf776c27941f53adb5d5e8766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6b548bba69d3a67462670f3d151f9e"><td class="memItemLeft" align="right" valign="top"><a id="a0f6b548bba69d3a67462670f3d151f9e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#a0f6b548bba69d3a67462670f3d151f9e">writeBoolean</a> (bool value) noexcept override</td></tr>
+<tr class="memdesc:a0f6b548bba69d3a67462670f3d151f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a boolean value to the underlying output. <br /></td></tr>
+<tr class="separator:a0f6b548bba69d3a67462670f3d151f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b213d22e781ced63407067770d34a2"><td class="memItemLeft" align="right" valign="top"><a id="af5b213d22e781ced63407067770d34a2"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtransporter_1_1network_1_1io_1_1_network_stream.html#af5b213d22e781ced63407067770d34a2">writeInt8</a> (std::int8_t value) noexcept override</td></tr>
 <tr class="memdesc:af5b213d22e781ced63407067770d34a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a signed 1-byte integer number to the underlying output. <br /></td></tr>
